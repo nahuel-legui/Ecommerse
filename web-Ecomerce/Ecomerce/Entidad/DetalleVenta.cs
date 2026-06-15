@@ -7,8 +7,8 @@ namespace Ecomerce.Entidad
 {
     public class DetalleVenta
     {
-        public Producto producto { get; set; }
-        public Venta venta { get; set; }
+        public Producto Producto { get; set; }
+        public int idVenta { get; set; }
         public int cantidad { get; set; }
         public decimal precioUnitario { get; set; }
 
