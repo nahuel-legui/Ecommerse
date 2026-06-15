@@ -78,4 +78,63 @@ go
 
 
 
+-- 1. INSERTAR CATEGORIAS
+insert into Categoria (descripcion_Ct) values 
+('Electrónica'),
+('Ropa y Calzado'),
+('Hogar y Cocina'),
+('Deportes'),
+('Libros');
+go
 
+-- 2. INSERTAR CLIENTES
+insert into Clientes (dni_Cl, nombre_Cl, apellido_Cl, direccion_Cl, fotoPerfil_Cl, localidad_Cl, fechaNacimiento_Cl, correoElectronicp_Cl, contrasenia_Cl, admin_Cl, activo_Cl) values
+('11111111', 'Carlos', 'Gómez', 'Av. Corrientes 1234', 'http://img.com', 'CABA', '1985-05-12', 'carlos@mail.com', 'Pass1234', 1, 1),
+('22222222', 'María', 'López', 'Calle Flores 567', 'http://img.com', 'Rosario', '1990-08-22', 'maria@mail.com', 'Maria90x', 0, 1),
+('33333333', 'Juan', 'Pérez', 'Belgrano 890', 'http://img.com', 'Córdoba', '1995-12-01', 'juan@mail.com', 'JuanP456', 0, 1),
+('44444444', 'Ana', 'Martínez', 'San Martín 432', 'http://img.com', 'Mendoza', '1988-03-15', 'ana@mail.com', 'AnaM789!', 0, 1),
+('55555555', 'Lucas', 'Rodríguez', 'Rivadavia 111', 'http://img.com', 'La Plata', '2000-07-19', 'lucas@mail.com', 'Lu123456', 0, 0);
+go
+
+-- 3. INSERTAR PRODUCTOS
+-- Las categorías van del 1 al 5
+insert into Productos (nombreProducto_Pd, precioUnitario_Pd, stock_Pd, descripcion_Pd, ImagenUrl_Pd, idCategoria_Pd_Ct, activo_Pd) values
+('Smartphone X', 899.99, 50, 'Teléfono inteligente de alta gama', 'http://img.com', 1, 1),
+('Auriculares Bluetooth', 59.50, 120, 'Auriculares inalámbricos con cancelación de ruido', 'http://img.com', 1, 1),
+('Zapatillas Running', 120.00, 35, 'Zapatillas cómodas para correr largas distancias', 'http://img.com', 2, 1),
+('Cafetera Express', 245.00, 15, 'Cafetera automática de acero inoxidable', 'http://img.com', 3, 1),
+('Pelota de Fútbol', 35.00, 80, 'Pelota oficial tamaño número 5', 'http://img.com', 4, 1),
+('Novela de Ficción', 18.90, 200, 'El último best seller del año', 'http://img.com', 5, 1);
+go
+
+-- 4. INSERTAR VENTAS
+-- Los DNI corresponden a los clientes creados arriba
+insert into Ventas (dni_Cl_Vn, total_Vn, fechaVenta_Vn) values
+('11111111', 959.49, '2026-06-01'),
+('22222222', 120.00, '2026-06-03'),
+('33333333', 72.80, '2026-06-05'),
+('44444444', 245.00, '2026-06-08'),
+('11111111', 59.50, '2026-06-10');
+go
+
+-- 5. INSERTAR DETALLE DE VENTA
+-- idVentas_Vn_Dv (1 al 5) e idProducto_Pd_Dv (1 al 6)
+insert into DetalleVenta (idProducto_Pd_Dv, idVentas_Vn_Dv, cantidad_Dv, precioUnitario_Dv) values
+(1, 1, 1, 899.99), -- Venta 1: 1 Smartphone
+(2, 1, 1, 59.50),  -- Venta 1: 1 Auricular
+(3, 2, 1, 120.00), -- Venta 2: 1 Zapatillas
+(5, 3, 1, 35.00),  -- Venta 3: 1 Pelota
+(6, 3, 2, 18.90),  -- Venta 3: 2 Libros
+(4, 4, 1, 245.00), -- Venta 4: 1 Cafetera
+(2, 5, 1, 59.50);  -- Venta 5: 1 Auricular
+go
+
+-- 6. INSERTAR SEGUIMIENTO
+-- Corresponde a las 5 ventas creadas
+insert into seguimiento (idVenta_Vn_Sg, enCamino_Sg, entregado_Sg) values
+(1, 0, 1), -- Venta 1: Entregada
+(2, 0, 1), -- Venta 2: Entregada
+(3, 1, 0), -- Venta 3: En camino
+(4, 0, 0), -- Venta 4: En preparación (no enviado, no entregado)
+(5, 0, 0); -- Venta 5: En preparación
+go

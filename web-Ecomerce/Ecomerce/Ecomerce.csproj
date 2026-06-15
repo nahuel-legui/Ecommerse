@@ -127,7 +127,9 @@
     </Compile>
     <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\daoClientes.cs" />
+    <Compile Include="Datos\daoDetalleVentas.cs" />
     <Compile Include="Datos\daoProductos.cs" />
+    <Compile Include="Datos\daoVentas.cs" />
     <Compile Include="Entidad\admin.cs" />
     <Compile Include="Entidad\Categoria.cs" />
     <Compile Include="Entidad\seguimiento.cs" />
@@ -140,6 +142,7 @@
     </Compile>
     <Compile Include="Negocio\NegocioCliente.cs" />
     <Compile Include="Negocio\NegocioProducto.cs" />
+    <Compile Include="Negocio\NegocioVenta.cs" />
     <Compile Include="productos.aspx.cs">
       <DependentUpon>productos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

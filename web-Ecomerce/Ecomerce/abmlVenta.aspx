@@ -196,40 +196,25 @@
                             </tr>
                         </thead>
                         <tbody>
+                            
+                            <%
+                                foreach (Ecomerce.Entidad.Venta item in ventaList)
+                                {
+                                    %>
                             <tr>
-                                <td class="fw-bold">#20441</td>
-                                <td>08/06/2026 14:22</td>
-                                <td>38444555</td>
-                                <td class="fw-bold text-success">$ 154.990,00</td>
-                                <td class="text-center">
-                                    <%-- Atributos data-bs de bootstrap para levantar el modal sin código extra de ejemplo --%>
-                                    <button type="button" class="btn-action-view" data-bs-toggle="modal" data-bs-target="#modalDetalleVenta">
-                                        <i class="bi bi-eye-fill"></i> Ver Detalle
-                                    </button>
+                                <td class="fw-bold">#<%: item.idVenta.ToString() %></td>
+                                <td><%: item.fechaVenta.ToString() %></td>
+                                <td><%: item.dniCliente %></td>
+                                <td class="fw-bold text-success">$ <%: item.total.ToString() %></td>
+                                    <td class="text-center">
+                                         <button type="button" class="btn-action-view" data-bs-toggle="modal" data-bs-target="#modalDetalleVenta" onclick="mostrarDetalle(<%: item.idVenta %>)">
+                                                <i class="bi bi-eye-fill"></i> Ver Detalle
+                                         </button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="fw-bold">#20442</td>
-                                <td>09/06/2026 10:05</td>
-                                <td>40111222</td>
-                                <td class="fw-bold text-success">$ 65.000,00</td>
-                                <td class="text-center">
-                                    <button type="button" class="btn-action-view" data-bs-toggle="modal" data-bs-target="#modalDetalleVenta">
-                                        <i class="bi bi-eye-fill"></i> Ver Detalle
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="fw-bold">#20443</td>
-                                <td>09/06/2026 15:30</td>
-                                <td>35999888</td>
-                                <td class="fw-bold text-success">$ 18.500,00</td>
-                                <td class="text-center">
-                                    <button type="button" class="btn-action-view" data-bs-toggle="modal" data-bs-target="#modalDetalleVenta">
-                                        <i class="bi bi-eye-fill"></i> Ver Detalle
-                                    </button>
-                                </td>
-                            </tr>
+                            <%
+                                }
+                                %>
                         </tbody>
                     </table>
                 </div>
@@ -243,15 +228,15 @@
                     
                     <div class="modal-header modal-header-custom">
                         <h5 class="modal-title fw-bold" id="modalDetalleVentaLabel">
-                            <i class="bi bi-info-circle-fill text-primary me-2"></i>Desglose de Artículos - Venta #20441
+                            <i class="bi bi-info-circle-fill text-primary me-2"></i>Desglose de Artículos
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     
                     <div class="modal-body p-4">
                         <div class="mb-3 small text-muted">
-                            <span class="me-3"><strong>Cliente DNI:</strong> 38444555</span>
-                            <span><strong>Fecha Operación:</strong> 08/06/2026</span>
+                            <span class="me-3"><strong>Cliente DNI:</strong> <span id="modalDni"></span></span>
+                            <span><strong>Fecha Operación:</strong> <span id="modalFecha"></span></span>
                         </div>
                         
                         <div class="table-responsive">
@@ -265,33 +250,12 @@
                                         <th class="text-end" style="width: 140px;">Subtotal</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="fw-semibold">101</td>
-                                        <td>Zapatillas Running Pro</td>
-                                        <td class="text-center">1</td>
-                                        <td class="text-end">$ 85.000,00</td>
-                                        <td class="text-end fw-semibold">$ 85.000,00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fw-semibold">102</td>
-                                        <td>Remera Algodón Premium</td>
-                                        <td class="text-center">2</td>
-                                        <td class="text-end">$ 18.500,00</td>
-                                        <td class="text-end fw-semibold">$ 37.000,00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="fw-semibold">105</td>
-                                        <td>Medias Deportivas Tech x3</td>
-                                        <td class="text-center">4</td>
-                                        <td class="text-end">$ 8.247,50</td>
-                                        <td class="text-end fw-semibold">$ 32.990,00</td>
-                                    </tr>
+                                <tbody id="modalDetalleBody">
                                 </tbody>
                                 <tfoot class="table-light fw-bold">
                                     <tr>
                                         <td colspan="4" class="text-end">Monto Total Liquidado:</td>
-                                        <td class="text-end text-success" style="font-size: 1rem;">$ 154.990,00</td>
+                                        <td class="text-end text-success" id="modalTotal" style="font-size: 1rem;"></td>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -314,7 +278,45 @@
         </footer>
 
     </form>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var ventasData = <%= VentasJson %>
+
+        function formatearMoneda(valor) {
+            return '$ ' + Number(valor).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function mostrarDetalle(idVenta) {
+            var venta = ventasData.find(function (v) { return v.idVenta === idVenta; });
+            if (!venta) return;
+
+            document.getElementById('modalDetalleVentaLabel').innerHTML =
+                '<i class="bi bi-info-circle-fill text-primary me-2"></i>Desglose de Artículos - Venta #' + venta.idVenta;
+
+            document.getElementById('modalDni').textContent = venta.dniCliente;
+            document.getElementById('modalFecha').textContent = venta.fechaVenta;
+            document.getElementById('modalTotal').textContent = formatearMoneda(venta.total);
+
+            var tbody = document.getElementById('modalDetalleBody');
+            tbody.innerHTML = '';
+
+            if (!venta.detalles || venta.detalles.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" class="text-center text-muted">No hay artículos registrados para esta venta.</td></tr>';
+                return;
+            }
+
+            venta.detalles.forEach(function (detalle) {
+                var subtotal = detalle.cantidad * detalle.precioUnitario;
+                var fila = document.createElement('tr');
+                fila.innerHTML =
+                    '<td class="fw-semibold">' + detalle.idProducto + '</td>' +
+                    '<td>' + detalle.nombreProducto + '</td>' +
+                    '<td class="text-center">' + detalle.cantidad + '</td>' +
+                    '<td class="text-end">' + formatearMoneda(detalle.precioUnitario) + '</td>' +
+                    '<td class="text-end fw-semibold">' + formatearMoneda(subtotal) + '</td>';
+                tbody.appendChild(fila);
+            });
+        }
+    </script>
 </body>
 </html>
