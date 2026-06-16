@@ -51,6 +51,15 @@ namespace Ecomerce
         protected global::System.Web.UI.WebControls.Repeater RepProductos;
 
         /// <summary>
+        /// Control lblBorrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblBorrar;
+
+        /// <summary>
         /// Control hfProductoID.
         /// </summary>
         /// <remarks>
@@ -123,6 +132,24 @@ namespace Ecomerce
         protected global::System.Web.UI.WebControls.TextBox txtStock;
 
         /// <summary>
+        /// Control lblCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCategoria;
+
+        /// <summary>
+        /// Control ddlCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCategoria;
+
+        /// <summary>
         /// Control lblImagenUrl.
         /// </summary>
         /// <remarks>
@@ -175,5 +202,14 @@ namespace Ecomerce
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardar;
+
+        /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
     }
 }

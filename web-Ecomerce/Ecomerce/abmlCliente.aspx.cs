@@ -38,7 +38,7 @@ namespace Ecomerce
         {
             negocioCl=new NegocioCliente();
             string dniCliente = ((LinkButton)sender).CommandArgument;
-            bool eliminado=negocioCl.bajaLogicaCliente(dniCliente);
+            bool eliminado = negocioCl.bajaLogicaCliente(dniCliente);
             cargarCliente();
             cargarClienteBaja();
             if (eliminado) {
