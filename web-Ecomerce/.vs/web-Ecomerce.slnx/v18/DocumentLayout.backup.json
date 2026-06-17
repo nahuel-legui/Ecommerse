@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\datos\\daoproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\datos\\daoproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\abmlproducto.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\abmlproducto.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\entidad\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\entidad\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\datos\\daoproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\datos\\daoproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\abmlcliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "daoProductos.cs",
               "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\Datos\\daoProductos.cs",
               "RelativeDocumentMoniker": "Ecomerce\\Datos\\daoProductos.cs",
               "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\Datos\\daoProductos.cs",
               "RelativeToolTip": "Ecomerce\\Datos\\daoProductos.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBoAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-11T17:38:11.859Z",
               "EditorCaption": ""
@@ -56,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Producto.cs",
               "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\Entidad\\Producto.cs",
               "RelativeDocumentMoniker": "Ecomerce\\Entidad\\Producto.cs",
@@ -69,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "abmlProducto.aspx",
               "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\abmlProducto.aspx",
               "RelativeDocumentMoniker": "Ecomerce\\abmlProducto.aspx",
