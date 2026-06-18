@@ -157,9 +157,11 @@
                 </div>
             </div>
 
-            <asp:Button ID="btnInciar" runat="server" Text="Ingresar" CssClass="btn-principal" />
+            <asp:Button ID="btnInciar" runat="server" Text="Ingresar" CssClass="btn-principal" OnClick="btnInciar_Click"/>
 
             <div class="login-footer">
+                <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                <br />
                 <span class="text-muted">¿No tienes cuenta?</span> 
                 <asp:HyperLink ID="hypLinkCrear" runat="server" NavigateUrl="~/registrarse.aspx" CssClass="link-custom">Crear una cuenta</asp:HyperLink>
             </div>

@@ -15,6 +15,7 @@ namespace Ecomerce.Entidad
         public string descripcion { get; set; }
         public string ImagenUrl { get; set; }
         public bool activo { get; set; }
+        public Categoria categoria { get; set; }
 
 
 

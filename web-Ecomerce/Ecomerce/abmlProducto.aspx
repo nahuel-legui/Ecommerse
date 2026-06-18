@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmlProducto.aspx.cs" Inherits="Ecomerce.abmlProducto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="abmlProducto.aspx.cs" Inherits="Ecomerce.abmlProducto" MaintainScrollPositionOnPostback="true" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -269,10 +269,10 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="d-flex justify-content-center gap-2">
-                                                <asp:LinkButton ID="btnEditarRow" runat="server" CssClass="btn-action-edit" ToolTip="Modificar Producto" CommandName="Editar" CommandArgument='<%# Eval("idProducto") %>'>
+                                                <asp:LinkButton ID="btnEditarRow" runat="server" CssClass="btn-action-edit" ToolTip="Modificar Producto" CommandName="Editar" CommandArgument='<%# Eval("idProducto") %>' OnClick="btnEditarRow_Click">
                                                     <i class="bi bi-pencil-square"></i>
                                                 </asp:LinkButton>
-                                                <asp:LinkButton ID="btnBorrarRow" runat="server" CssClass="btn-action-delete" ToolTip="Dar de Baja Producto" CommandName="Eliminar" CommandArgument='<%# Eval("idProducto") %>'>
+                                                <asp:LinkButton ID="btnBorrarRow" runat="server" CssClass="btn-action-delete" ToolTip="Dar de Baja Producto" CommandName="Eliminar" CommandArgument='<%# Eval("idProducto") %>' OnClick="btnBorrarRow_Click"> 
                                                     <i class="bi bi-trash3-fill"></i>
                                                 </asp:LinkButton>
                                             </div>
@@ -281,49 +281,56 @@
                                 </ItemTemplate>
                             </asp:Repeater>
                         </tbody>
+                        <asp:Label ID="lblBorrar" runat="server" Text=""></asp:Label>
                     </table>
                 </div>
             </div>
 
-            <div class="abml-card">
-                <h2 class="abml-title"><i class="bi bi-pencil-fill"></i> Datos del Producto</h2>
-                <p class="text-muted small mb-4">Complete el formulario para dar de alta un nuevo artículo o modificar los datos del producto seleccionado arriba.</p>
-                
-                <%-- Guardamos el idProducto en un campo oculto cuando editamos --%>
-                <asp:HiddenField ID="hfProductoID" runat="server" />
+           <div class="abml-card">
+    <h2 class="abml-title"><i class="bi bi-pencil-fill"></i> Datos del Producto</h2>
+    <p class="text-muted small mb-4">Complete el formulario para dar de alta un nuevo artículo o modificar los datos del producto seleccionado arriba.</p>
+    
+    <%-- Guardamos el idProducto en un campo oculto cuando editamos --%>
+    <asp:HiddenField ID="hfProductoID" runat="server" />
 
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <asp:Label ID="lblNombre" runat="server" Text="Nombre del Producto" CssClass="form-label-custom"></asp:Label>
-                        <asp:TextBox ID="txtNombreProducto" runat="server" CssClass="form-control-custom" placeholder="Ej. Gorra Trucker Urbana"></asp:TextBox>
-                    </div>
-                    <div class="col-md-3">
-                        <asp:Label ID="lblPrecio" runat="server" Text="Precio Unitario ($)" CssClass="form-label-custom"></asp:Label>
-                        <asp:TextBox ID="txtPrecioUnitario" runat="server" CssClass="form-control-custom" placeholder="0.00" type="number" step="0.01"></asp:TextBox>
-                    </div>
-                    <div class="col-md-3">
-                        
-                        <asp:Label ID="lblIdProducto" runat="server" Text="" Enabled="True" Visible="False"></asp:Label>
-                        <asp:Label ID="lblStock" runat="server" Text="Stock Inicial" CssClass="form-label-custom"></asp:Label>
-                        <asp:TextBox ID="txtStock" runat="server" CssClass="form-control-custom" placeholder="0" type="number"></asp:TextBox>
-                    </div>
-                    <div class="col-12">
-                        <asp:Label ID="lblImagenUrl" runat="server" Text="URL de la Imagen del Producto" CssClass="form-label-custom"></asp:Label>
-                        <asp:TextBox ID="txtImagenUrl" runat="server" CssClass="form-control-custom" placeholder="https://ejemplo.com/imagenes/producto.jpg"></asp:TextBox>
-                    </div>
-                    <div class="col-12">
-                        <asp:Label ID="lblDescripcion" runat="server" Text="Descripción del Producto" CssClass="form-label-custom"></asp:Label>
-                        <asp:TextBox ID="txtDescripcion" runat="server" TextMode="MultiLine" Rows="3" CssClass="form-control-custom" placeholder="Escriba aquí los detalles y especificaciones del producto..."></asp:TextBox>
-                    </div>
-                </div>
-
-                <div class="mt-4 d-flex gap-2 justify-content-end">
-                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar / Limpiar" CssClass="btn-cancelar" />
-                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar Producto" CssClass="btn-guardar" />
-                </div>
-            </div>
-
+    <div class="row g-3">
+        <div class="col-md-6">
+            <asp:Label ID="lblNombre" runat="server" Text="Nombre del Producto" CssClass="form-label-custom"></asp:Label>
+            <asp:TextBox ID="txtNombreProducto" runat="server" CssClass="form-control-custom" placeholder="Ej. Gorra Trucker Urbana"></asp:TextBox>
         </div>
+        <div class="col-md-3">
+            <asp:Label ID="lblPrecio" runat="server" Text="Precio Unitario ($)" CssClass="form-label-custom"></asp:Label>
+            <asp:TextBox ID="txtPrecioUnitario" runat="server" CssClass="form-control-custom" placeholder="0.00" type="number" step="0.01"></asp:TextBox>
+        </div>
+        <div class="col-md-3">
+            <asp:Label ID="lblIdProducto" runat="server" Text="" Enabled="True" Visible="False"></asp:Label>
+            <asp:Label ID="lblStock" runat="server" Text="Stock Inicial" CssClass="form-label-custom"></asp:Label>
+            <asp:TextBox ID="txtStock" runat="server" CssClass="form-control-custom" placeholder="0" type="number"></asp:TextBox>
+        </div>
+        
+        <div class="col-12">
+            <asp:Label ID="lblCategoria" runat="server" Text="Categoría del Producto" CssClass="form-label-custom"></asp:Label>
+            <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-control-custom">
+                <asp:ListItem Value="0">-- Seleccione una Categoría --</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+
+        <div class="col-12">
+            <asp:Label ID="lblImagenUrl" runat="server" Text="URL de la Imagen del Producto" CssClass="form-label-custom"></asp:Label>
+            <asp:TextBox ID="txtImagenUrl" runat="server" CssClass="form-control-custom" placeholder="https://ejemplo.com/imagenes/producto.jpg"></asp:TextBox>
+        </div>
+        <div class="col-12">
+            <asp:Label ID="lblDescripcion" runat="server" Text="Descripción del Producto" CssClass="form-label-custom"></asp:Label>
+            <asp:TextBox ID="txtDescripcion" runat="server" TextMode="MultiLine" Rows="3" CssClass="form-control-custom" placeholder="Escriba aquí los detalles y especificaciones del producto..."></asp:TextBox>
+        </div>
+    </div>
+
+    <div class="mt-4 d-flex gap-2 justify-content-end">
+        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar / Limpiar" CssClass="btn-cancelar" OnClick="btnCancelar_Click"/>
+        <asp:Button ID="btnGuardar" runat="server" Text="Agregar Producto" CssClass="btn-guardar" OnClick="btnGuardar_Click" />
+    </div>
+    <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+</div>
 
         <footer class="py-4 mt-auto">
             <div class="container text-center text-md-between d-md-flex align-items-center small">

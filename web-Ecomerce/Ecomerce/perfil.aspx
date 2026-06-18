@@ -117,6 +117,7 @@
             color: #718096;
             text-align: center;
             margin-bottom: 1.5rem;
+            display: block;
         }
 
         /* Estilos de los inputs informativos */
@@ -285,13 +286,13 @@
                         </div>
                         
                         <!-- Nombre del usuario de muestra -->
-                        <h2 class="profile-name">Juan Pérez</h2>
-                        <p class="profile-email-sub">juan.perez@email.com</p>
+                        <asp:Label ID="lblNombrePerfil" runat="server" Text="" CssClass="profile-name"></asp:Label>
+                        <asp:Label ID="lblEmailPerfil" runat="server" Text="" CssClass="profile-email-sub" DisplayMode="Paragraph"></asp:Label>
                         
                         <hr class="my-4 border-light-subtle" />
                         
                         <!-- Botón de Cerrar Sesión -->
-                        <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="btn-logout" />
+                        <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="btn-logout" OnClick="btnCerrarSesion_Click" />
                     </div>
                 </div>
 
@@ -307,7 +308,7 @@
                                 <asp:Label ID="lblNombre" runat="server" Text="Nombre" CssClass="form-label-custom"></asp:Label>
                                 <div class="input-group-custom">
                                     <i class="bi bi-person"></i>
-                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control-custom" placeholder="Tu nombre"></asp:TextBox>
+                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control-custom" placeholder="Tu nombre" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -316,7 +317,7 @@
                                 <asp:Label ID="lblApellido" runat="server" Text="Apellido" CssClass="form-label-custom"></asp:Label>
                                 <div class="input-group-custom">
                                     <i class="bi bi-person"></i>
-                                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control-custom" placeholder="Tu apellido"></asp:TextBox>
+                                    <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control-custom" placeholder="Tu apellido" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -325,7 +326,7 @@
                                 <asp:Label ID="lblDni" runat="server" Text="DNI" CssClass="form-label-custom"></asp:Label>
                                 <div class="input-group-custom">
                                     <i class="bi bi-card-text"></i>
-                                    <asp:TextBox ID="txtDni" runat="server" CssClass="form-control-custom" placeholder="Número de documento"></asp:TextBox>
+                                    <asp:TextBox ID="txtDni" runat="server" CssClass="form-control-custom" placeholder="Número de documento" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -334,7 +335,7 @@
                                 <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de Nacimiento" CssClass="form-label-custom"></asp:Label>
                                 <div class="input-group-custom">
                                     <i class="bi bi-calendar-event"></i>
-                                    <asp:TextBox ID="txtFechaNacimiento" runat="server" TextMode="Date" CssClass="form-control-custom"></asp:TextBox>
+                                    <asp:TextBox ID="txtFechaNacimiento" runat="server" TextMode="SingleLine" CssClass="form-control-custom" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -343,7 +344,7 @@
                                 <asp:Label ID="lblCorreo" runat="server" Text="Correo Electrónico" CssClass="form-label-custom"></asp:Label>
                                 <div class="input-group-custom">
                                     <i class="bi bi-envelope"></i>
-                                    <asp:TextBox ID="txtCorreoElectronico" runat="server" TextMode="Email" CssClass="form-control-custom" placeholder="tu@email.com"></asp:TextBox>
+                                    <asp:TextBox ID="txtCorreoElectronico" runat="server" TextMode="Email" CssClass="form-control-custom" placeholder="tu@email.com" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -379,7 +380,8 @@
 
                         <!-- Botón para guardar o actualizar la información -->
                         <div class="mt-3 text-end">
-                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar Mis Datos" CssClass="btn-principal" />
+                            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar Mis Datos" CssClass="btn-principal" OnClick="btnActualizar_Click" />
                         </div>
 
                     </div>
