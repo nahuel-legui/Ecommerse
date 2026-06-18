@@ -132,6 +132,7 @@
     <Compile Include="Datos\daoVentas.cs" />
     <Compile Include="Entidad\admin.cs" />
     <Compile Include="Entidad\Categoria.cs" />
+    <Compile Include="Entidad\ItemCarrito.cs" />
     <Compile Include="Entidad\seguimiento.cs" />
     <Compile Include="homeAdmin.aspx.cs">
       <DependentUpon>homeAdmin.aspx</DependentUpon>

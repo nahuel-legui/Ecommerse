@@ -296,7 +296,7 @@
                         
                         <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="~/carrito.aspx" CssClass="nav-icon fw-bold text-primary" ToolTip="Carrito de compras">
                             <i class="bi bi-cart3"></i>
-                            <span class="cart-badge">2</span> <!-- Modificado a 2 por los ejemplos expuestos -->
+                            <span class="cart-badge"><%= CantidadCarrito() %></span> 
                         </asp:HyperLink>
                     </div>
                 </div>
@@ -314,46 +314,32 @@
                     <div class="cart-card">
                         
                         <!-- Producto Ejemplo 1 -->
-                        <div class="cart-item">
-                            <div class="cart-item-img-wrapper">
-                                <img src="https://picsum.photos/150/150?random=81" class="cart-item-img" alt="Producto 1" />
-                            </div>
-                            <div class="cart-item-details">
-                                <h3 class="cart-item-title">Auriculares Wireless Premium</h3>
-                                <p class="cart-item-price">$89.99</p>
-                            </div>
+                        <asp:Repeater ID="RepProductos" runat="server">
+                            <ItemTemplate>
+                                <div class="cart-item">
+                                    <div class="cart-item-img-wrapper">
+                                        <img src="<%# Eval("Producto.ImagenUrl") %>" class="cart-item-img" alt="Producto" />
+                                    </div>
+                                <div class="cart-item-details">
+                                    <h3 class="cart-item-title"><%# Eval("Producto.nombreProducto") %></h3>
+                                    <p class="cart-item-price"><%# Eval("Producto.precioUnitario", "${0:F2}") %></p>
+                                </div>
                             <!-- Control de cantidad maqueta -->
-                            <div class="quantity-control">
-                                <button type="button" class="btn-qty">-</button>
-                                <span class="qty-number">1</span>
-                                <button type="button" class="btn-qty">+</button>
-                            </div>
+                                <div class="quantity-control">
+                                    <asp:Button ID="btnMenos" runat="server" Text="-" CssClass="btn-qty" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnMenos_Click" />
+                                    <span class="qty-number"><%# Eval("Cantidad") %></span>
+                                    <asp:Button ID="btnMas" runat="server" Text="+" CssClass="btn-qty" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnMas_Click" />
+                                </div>
                             <!-- Botón eliminar maqueta -->
-                            <button type="button" class="btn-delete-item" title="Eliminar del carrito">
-                                <i class="bi bi-trash3"></i>
-                            </button>
-                        </div>
+                                <asp:Button type="button" runat="server" class="btn-delete-item" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnEliminar_Click" Text="🗑">
+                                
+                                </asp:Button>
+                            </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        
 
-                        <!-- Producto Ejemplo 2 -->
-                        <div class="cart-item">
-                            <div class="cart-item-img-wrapper">
-                                <img src="https://picsum.photos/150/150?random=82" class="cart-item-img" alt="Producto 2" />
-                            </div>
-                            <div class="cart-item-details">
-                                <h3 class="cart-item-title">Teclado Mecánico RGB</h3>
-                                <p class="cart-item-price">$65.00</p>
-                            </div>
-                            <!-- Control de cantidad maqueta -->
-                            <div class="quantity-control">
-                                <button type="button" class="btn-qty">-</button>
-                                <span class="qty-number">2</span>
-                                <button type="button" class="btn-qty">+</button>
-                            </div>
-                            <!-- Botón eliminar maqueta -->
-                            <button type="button" class="btn-delete-item" title="Eliminar del carrito">
-                                <i class="bi bi-trash3"></i>
-                            </button>
-                        </div>
+                        
 
                     </div>
                 </div>
@@ -365,7 +351,7 @@
                         
                         <div class="summary-row">
                             <span>Subtotal Productos</span>
-                            <span class="fw-medium">$219.99</span>
+                            <span class="fw-medium">$<%= TotalCarrito().ToString("N2") %></span>
                         </div>
                         <div class="summary-row">
                             <span>Costo de Envío</span>
@@ -375,7 +361,7 @@
                         <!-- Total de la Venta final -->
                         <div class="summary-total-row">
                             <span>Total</span>
-                            <span>$219.99</span>
+                            <span>$<%= TotalCarrito().ToString("N2") %></span>
                         </div>
                         
                         <!-- Botón Finalizar Venta -->
