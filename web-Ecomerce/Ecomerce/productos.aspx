@@ -286,7 +286,7 @@
                         
                         <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="~/carrito.aspx" CssClass="nav-icon" ToolTip="Carrito de compras">
                             <i class="bi bi-cart3"></i>
-                            <span class="cart-badge">3</span>
+                            <span class="cart-badge"><%= CantidadCarrito() %></span>
                         </asp:HyperLink>
                     </div>
                 </div>
@@ -307,7 +307,7 @@
                             <asp:Label ID="lblBuscar" runat="server" Text="Buscar por nombre" CssClass="form-label-custom"></asp:Label>
                             <div class="input-group-custom">
                                 <i class="bi bi-search"></i>
-                                <asp:TextBox ID="txtBuscarNombre" runat="server" CssClass="form-control-custom" placeholder="Ej: Auriculares..."></asp:TextBox>
+                                <asp:TextBox ID="txtBuscarNombre" runat="server" CssClass="form-control-custom" placeholder="Ej: Auriculares..." AutoPostBack="true" OnTextChanged="txtBuscarNombre_TextChanged"></asp:TextBox>
                             </div>
                         </div>
 
@@ -323,7 +323,7 @@
                         </div>
 
                         <!-- Botón para procesar filtros -->
-                        <asp:Button ID="btnFiltrar" runat="server" Text="Aplicar Filtros" CssClass="btn-filtrar" />
+                        <asp:Button ID="btnFiltrar" runat="server" Text="Aplicar Filtros" CssClass="btn-filtrar" OnClick="btnFiltrar_Click" />
                     </div>
                 </div>
 
@@ -332,88 +332,23 @@
                     <div class="row g-4">
                         
                         <!-- Producto 1 -->
+                        <asp:Repeater ID="RepProductos" runat="server">
+                            <ItemTemplate>
                         <div class="col-12 col-sm-6 col-md-4">
                             <div class="product-card">
                                 <div class="product-img-wrapper">
-                                    <img src="https://picsum.photos/300/300?random=21" class="product-img" alt="Producto" />
+                                    <img src="<%# Eval("ImagenUrl") %>" class="product-img" alt="Producto" />
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-title">Auriculares Wireless Premium</h3>
-                                    <p class="product-price">$89.99</p>
-                                    <asp:Button ID="btnC1" runat="server" Text="Agregar al Carrito" CssClass="btn-agregar-carrito" />
+                                    <h3 class="product-title"><%# Eval("nombreProducto")  %></h3>
+                                    <p class="product-price">$<%# Eval("precioUnitario", "{0:N2}") %></p>
+                                    <asp:Button ID="btnC1" runat="server" Text="Agregar al Carrito" CssClass="btn-agregar-carrito" OnClick="btnAgregarItem" CommandArgument='<%# Eval("idProducto") %>'/>
                                 </div>
                             </div>
                         </div>
+                            </ItemTemplate>
 
-                        <!-- Producto 2 -->
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="product-card">
-                                <div class="product-img-wrapper">
-                                    <img src="https://picsum.photos/300/300?random=22" class="product-img" alt="Producto" />
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-title">Reloj Inteligente Sport Pro</h3>
-                                    <p class="product-price">$129.50</p>
-                                    <asp:Button ID="btnC2" runat="server" Text="Agregar al Carrito" CssClass="btn-agregar-carrito" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Producto 3 -->
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="product-card">
-                                <div class="product-img-wrapper">
-                                    <img src="https://picsum.photos/300/300?random=23" class="product-img" alt="Producto" />
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-title">Teclado Mecánico RGB</h3>
-                                    <p class="product-price">$65.00</p>
-                                    <asp:Button ID="btnC3" runat="server" Text="Agregar al Carrito" CssClass="btn-agregar-carrito" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Producto 4 -->
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="product-card">
-                                <div class="product-img-wrapper">
-                                    <img src="https://picsum.photos/300/300?random=24" class="product-img" alt="Producto" />
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-title">Mochila Urbana Impermeable</h3>
-                                    <p class="product-price">$45.00</p>
-                                    <asp:Button ID="btnC4" runat="server" Text="Agregar al Carrito" CssClass="btn-agregar-carrito" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Producto 5 -->
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="product-card">
-                                <div class="product-img-wrapper">
-                                    <img src="https://picsum.photos/300/300?random=25" class="product-img" alt="Producto" />
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-title">Mouse Óptico Gamer 16000 DPI</h3>
-                                    <p class="product-price">$34.99</p>
-                                    <asp:Button ID="btnC5" runat="server" Text="Agregar al Carrito" CssClass="btn-agregar-carrito" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Producto 6 -->
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="product-card">
-                                <div class="product-img-wrapper">
-                                    <img src="https://picsum.photos/300/300?random=26" class="product-img" alt="Producto" />
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-title">Cargador Portátil PowerBank 20k</h3>
-                                    <p class="product-price">$28.00</p>
-                                    <asp:Button ID="btnC6" runat="server" Text="Agregar al Carrito" CssClass="btn-agregar-carrito" />
-                                </div>
-                            </div>
-                        </div>
+                        </asp:Repeater>
 
                     </div>
                 </div>
