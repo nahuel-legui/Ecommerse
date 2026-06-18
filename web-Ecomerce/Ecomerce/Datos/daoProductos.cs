@@ -45,36 +45,6 @@ namespace Ecomerce.Datos
             }
 
         }
-        public Producto obtenerProductoPorId(int idProducto)
-        {
-
-            cn = new Conexion();
-            try
-            {
-                Producto producto = new Producto();
-                string consulta = "select * from Productos where idProducto_Pd = @idProducto and activo_Pd = 1";
-                cn.setearConsulta(consulta);
-                cn.setearParametros("@idProducto", idProducto);
-                SqlDataReader lector = cn.ejecutarLectura();
-                while (lector.Read())
-                {
-                    producto.idProducto = int.Parse(lector[0].ToString());
-                    producto.nombreProducto = lector[1].ToString();
-                    producto.precioUnitario = float.Parse(lector[2].ToString());
-                    producto.stock = int.Parse(lector[3].ToString());
-                    producto.descripcion = lector[4].ToString();
-                    producto.ImagenUrl = lector[5].ToString();
-                    producto.activo = Convert.ToBoolean(lector[6]);
-
-                }
-                return producto;
-            }catch (Exception)
-            {
-
-                throw ;
-
-            }
-        }
 
 
         public bool modificarProducto(Producto producto)
@@ -117,7 +87,7 @@ namespace Ecomerce.Datos
             }
         }
 
-        public Producto obtenerProductoXId(string id)
+        public Producto obtenerProductoXId(int id)
         {
             
             cn = new Conexion();
@@ -143,6 +113,41 @@ namespace Ecomerce.Datos
 
                 }
                 return producto;
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public List<Producto> obtenerTodosLosProductosXCategoria(int idCategoria)
+        {
+            List<Producto> lista = new List<Producto>();
+            cn = new Conexion();
+            try
+            {
+                string consulta = "select * from Productos where activo_Pd=1 and idCategoria_Pd_Ct=@idCategoria";
+                cn.setearConsulta(consulta);
+                cn.setearParametros("@idCategoria", idCategoria);
+                SqlDataReader lector = cn.ejecutarLectura();
+                while (lector.Read())
+                {
+                    Producto producto = new Producto();
+                    producto.idProducto = int.Parse(lector[0].ToString());
+                    producto.nombreProducto = lector[1].ToString();
+                    producto.precioUnitario = float.Parse(lector[2].ToString());
+                    producto.stock = int.Parse(lector[3].ToString());
+                    producto.descripcion = lector[4].ToString();
+                    producto.ImagenUrl = lector[5].ToString();
+                    producto.activo = Convert.ToBoolean(lector[6]);
+                    lista.Add(producto);
+
+                }
+                return lista;
 
 
             }

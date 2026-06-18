@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ecomerce.Entidad;
+using Ecomerce.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +11,14 @@ namespace Ecomerce
 {
     public partial class home : System.Web.UI.Page
     {
+        public List<Producto> productosList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            { 
+            NegocioProducto negPr = new NegocioProducto();
+            productosList = negPr.obtenerTodosLosProductos();
+            }
         }
     }
 }

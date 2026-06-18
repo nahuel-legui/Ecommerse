@@ -258,57 +258,39 @@
         </div>
 
         <div class="container my-5">
-            <h2 class="text-center section-title">Productos Destacados</h2>
-            
-            <div class="row g-4">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <div class="product-img-wrapper">
-                            <img src="https://picsum.photos/300/300?random=11" class="product-img" alt="Producto" />
-                        </div>
-                        <div class="p-3">
-                            <h3 class="product-title">Auriculares Wireless Premium</h3>
-                            <p class="product-price">$89.99</p>
-                        </div>
-                    </div>
+    <h2 class="text-center section-title">Productos Destacados</h2>
+
+    <div class="row g-4">
+
+        <%
+        int contador = 0;
+
+        foreach (Ecomerce.Entidad.Producto item in productosList)
+        {
+            if (contador >= 4)
+                break;
+        %>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="<%: item.ImagenUrl %>" class="product-img" alt="<%: item.nombreProducto %>" />
                 </div>
 
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <div class="product-img-wrapper">
-                            <img src="https://picsum.photos/300/300?random=12" class="product-img" alt="Producto" />
-                        </div>
-                        <div class="p-3">
-                            <h3 class="product-title">Reloj Inteligente Sport Pro</h3>
-                            <p class="product-price">$129.50</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <div class="product-img-wrapper">
-                            <img src="https://picsum.photos/300/300?random=13" class="product-img" alt="Producto" />
-                        </div>
-                        <div class="p-3">
-                            <h3 class="product-title">Teclado Mecánico RGB</h3>
-                            <p class="product-price">$65.00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <div class="product-img-wrapper">
-                            <img src="https://picsum.photos/300/300?random=14" class="product-img" alt="Producto" />
-                        </div>
-                        <div class="p-3">
-                            <h3 class="product-title">Mochila Urbana Impermeable</h3>
-                            <p class="product-price">$45.00</p>
-                        </div>
-                    </div>
+                <div class="p-3">
+                    <h3 class="product-title"><%: item.nombreProducto %></h3>
+                    <p class="product-price">$<%: item.precioUnitario %></p>
                 </div>
             </div>
+        </div>
+
+        <%
+            contador++;
+        }
+        %>
+
+    </div>
+</div>
 
             <div class="text-center mt-5">
                 <asp:HyperLink ID="lnkVerMas" runat="server" NavigateUrl="~/productos.aspx" CssClass="btn-ver-mas">

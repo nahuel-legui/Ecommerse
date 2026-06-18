@@ -16,7 +16,7 @@ namespace Ecomerce.Negocio
             daoP = new daoProductos();
             return daoP.obtenerTodosLosProductos();
         }
-        public Producto obtenerProductoXId(string id)
+        public Producto obtenerProductoXId(int id)
         {
             daoP=new daoProductos();
             return daoP.obtenerProductoXId(id);
@@ -33,6 +33,13 @@ namespace Ecomerce.Negocio
             daoP= new daoProductos();
             return daoP.obtenerTodasCategorias();
         }
+
+        public List<Producto> obtenerProductosXCategoria(int idCategoria)
+        {
+            daoP = new daoProductos();
+            return daoP.obtenerTodosLosProductosXCategoria(idCategoria);
+        }
+
         public bool agregarProducto(Producto objProducto)
         {
             daoP = new daoProductos();

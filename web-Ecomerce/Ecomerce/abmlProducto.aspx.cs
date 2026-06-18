@@ -48,7 +48,7 @@ namespace Ecomerce
             negPr= new NegocioProducto();
             string idProducto = ((LinkButton)sender).CommandArgument;
             Producto objProducto=new Producto();
-            objProducto = negPr.obtenerProductoXId(idProducto);
+            objProducto = negPr.obtenerProductoXId(int.Parse(idProducto));
             lblIdProducto.Text = idProducto;
             txtNombreProducto.Text = objProducto.nombreProducto;
             txtDescripcion.Text = objProducto.descripcion;
