@@ -45,6 +45,39 @@ namespace Ecomerce.Datos
             }
 
         }
+        public List<Producto> obtenerTodosLosProductosBaja()
+        {
+            List<Producto> lista = new List<Producto>();
+            cn = new Conexion();
+            try
+            {
+                string consulta = "select * from Productos where activo_Pd=0";
+                cn.setearConsulta(consulta);
+                SqlDataReader lector = cn.ejecutarLectura();
+                while (lector.Read())
+                {
+                    Producto producto = new Producto();
+                    producto.idProducto = int.Parse(lector[0].ToString());
+                    producto.nombreProducto = lector[1].ToString();
+                    producto.precioUnitario = float.Parse(lector[2].ToString());
+                    producto.stock = int.Parse(lector[3].ToString());
+                    producto.descripcion = lector[4].ToString();
+                    producto.ImagenUrl = lector[5].ToString();
+                    producto.activo = Convert.ToBoolean(lector[6]);
+                    lista.Add(producto);
+
+                }
+                return lista;
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
 
 
         public bool modificarProducto(Producto producto)
@@ -223,6 +256,27 @@ namespace Ecomerce.Datos
             try
             {
                 string consulta = "update Productos set activo_Pd=0 where idProducto_Pd=@id";
+
+                cn.setearConsulta(consulta);
+                cn.setearParametros("@id", idProducto);
+
+                int filas = cn.ejecutarAccion();
+                return filas > 0;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public bool darAltaLogica(string idProducto)
+        {
+            cn = new Conexion();
+
+            try
+            {
+                string consulta = "update Productos set activo_Pd=1 where idProducto_Pd=@id";
 
                 cn.setearConsulta(consulta);
                 cn.setearParametros("@id", idProducto);
