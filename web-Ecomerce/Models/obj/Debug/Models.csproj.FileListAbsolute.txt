@@ -1,0 +1,6 @@
+D:\Ecommerse\web-Ecomerce\Models\bin\Debug\Models.dll
+D:\Ecommerse\web-Ecomerce\Models\bin\Debug\Models.pdb
+D:\Ecommerse\web-Ecomerce\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+D:\Ecommerse\web-Ecomerce\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\Ecommerse\web-Ecomerce\Models\obj\Debug\Models.dll
+D:\Ecommerse\web-Ecomerce\Models\obj\Debug\Models.pdb
