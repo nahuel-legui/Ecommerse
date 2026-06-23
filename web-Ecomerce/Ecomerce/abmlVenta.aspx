@@ -198,7 +198,7 @@
                         <tbody>
                             
                             <%
-                                foreach (Ecomerce.Entidad.Venta item in ventaList)
+                                foreach (Models.Venta item in ventaList)
                                 {
                                     %>
                             <tr>

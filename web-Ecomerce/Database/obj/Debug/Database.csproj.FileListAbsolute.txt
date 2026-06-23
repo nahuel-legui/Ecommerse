@@ -1,0 +1,9 @@
+D:\Ecommerse\web-Ecomerce\Database\bin\Debug\Database.dll
+D:\Ecommerse\web-Ecomerce\Database\bin\Debug\Database.pdb
+D:\Ecommerse\web-Ecomerce\Database\bin\Debug\Models.dll
+D:\Ecommerse\web-Ecomerce\Database\bin\Debug\Models.pdb
+D:\Ecommerse\web-Ecomerce\Database\obj\Debug\Database.csproj.AssemblyReference.cache
+D:\Ecommerse\web-Ecomerce\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+D:\Ecommerse\web-Ecomerce\Database\obj\Debug\Database.csproj.Up2Date
+D:\Ecommerse\web-Ecomerce\Database\obj\Debug\Database.dll
+D:\Ecommerse\web-Ecomerce\Database\obj\Debug\Database.pdb

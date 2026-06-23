@@ -1,4 +1,4 @@
-﻿using Ecomerce.Entidad;
+﻿using Models;
 using Ecomerce.Negocio;
 using System;
 using System.Collections.Generic;

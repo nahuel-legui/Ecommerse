@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="Database/database.csproj" Id="3d87c9a3-c7bc-402d-b7e2-0907cf292bdb" />
   <Project Path="Ecomerce/Ecomerce.csproj" Id="2838bab8-99e3-49ac-9f8b-eae0c266af22" />
+  <Project Path="Models/models.csproj" Id="a9a86eff-1f6d-49ae-b431-7cf682ae17d0" />
 </Solution>
