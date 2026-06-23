@@ -30,7 +30,7 @@ namespace Ecomerce.Datos
 
                     int idProducto = (int)lector["idProducto_Pd_Dv"];
 
-                    aux.Producto = pr.obtenerProductoXId(idProducto);
+                    aux.Producto = pr.obtenerProductoXIdSinFiltroActivo(idProducto);
 
                     aux.idVenta = idVenta;
                     aux.cantidad = (int)lector["cantidad_Dv"];
