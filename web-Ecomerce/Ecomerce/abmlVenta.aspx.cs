@@ -15,6 +15,15 @@ namespace Ecomerce
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+
+                if (Session["UsuarioAdmin"] == null)
+                {
+                    Response.Redirect("login.aspx");
+
+                }
+            }
             NegocioVenta ventas = new NegocioVenta();
             ventaList = ventas.obtenerTodasLasVentas();
 

@@ -7,3 +7,12 @@ D:\Ecommerse\web-Ecomerce\Database\obj\Debug\Database.csproj.CoreCompileInputs.c
 D:\Ecommerse\web-Ecomerce\Database\obj\Debug\Database.csproj.Up2Date
 D:\Ecommerse\web-Ecomerce\Database\obj\Debug\Database.dll
 D:\Ecommerse\web-Ecomerce\Database\obj\Debug\Database.pdb
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Database\bin\Debug\Database.dll
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Database\bin\Debug\Database.pdb
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Database\bin\Debug\Models.dll
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Database\bin\Debug\Models.pdb
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Database\obj\Debug\database.csproj.AssemblyReference.cache
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Database\obj\Debug\database.csproj.CoreCompileInputs.cache
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Database\obj\Debug\database.csproj.Up2Date
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Database\obj\Debug\Database.dll
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Database\obj\Debug\Database.pdb

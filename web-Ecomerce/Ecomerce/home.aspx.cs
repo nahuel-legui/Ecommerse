@@ -18,6 +18,12 @@ namespace Ecomerce
             { 
             NegocioProducto negPr = new NegocioProducto();
             productosList = negPr.obtenerTodosLosProductos();
+                
+                if (Session["Usuario"] == null)
+                {
+                    Response.Redirect("login.aspx");
+                }
+                    
             }
         }
     }

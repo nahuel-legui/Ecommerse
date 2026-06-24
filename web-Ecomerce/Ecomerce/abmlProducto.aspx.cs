@@ -19,8 +19,17 @@ namespace Ecomerce
             //Configuracion inicial de la pantalla
             if (!IsPostBack)
             {
+                
+
+                if (Session["UsuarioAdmin"] == null)
+                {
+                    Response.Redirect("login.aspx");
+
+                }
+                
                 cargarProductos();
                 cargarCategorias();
+                cargarProductosbaja();
             }
 
             
@@ -40,6 +49,13 @@ namespace Ecomerce
             negPr=new NegocioProducto();
             RepProductos.DataSource = negPr.obtenerTodosLosProductos();
             RepProductos.DataBind();
+
+        }
+        public void cargarProductosbaja()
+        {
+            negPr = new NegocioProducto();
+            rpProductoBaja.DataSource = negPr.obtenerTodosLosProductosBaja();
+            rpProductoBaja.DataBind();
 
         }
 
@@ -164,7 +180,27 @@ namespace Ecomerce
             }
             cargarProductos();
             limpiar();
+            cargarProductosbaja();
+        }
 
+        protected void btnAltaRow_Click(object sender, EventArgs e)
+        {
+            negPr = new NegocioProducto();
+            string idProducto = ((LinkButton)sender).CommandArgument;
+
+            if (negPr.darAltaLogica(idProducto))
+            {
+                lblMensajeBaja.Text = "Se dio de alta correctamente";
+                lblMensajeBaja.ForeColor= System.Drawing.Color.Green;
+            }
+            else
+            {
+                lblMensajeBaja.Text = "No se pudo dar de alta el producto";
+                lblMensajeBaja.ForeColor = System.Drawing.Color.Red;
+            }
+            cargarProductos();
+            limpiar();
+            cargarProductosbaja();
         }
     }
 }

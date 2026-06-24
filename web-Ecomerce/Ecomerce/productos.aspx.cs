@@ -15,12 +15,13 @@ namespace Ecomerce
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Configuracion inicial de la pantalla
-            if (!IsPostBack)
-            {
-                cargarProductos();
-                cargarCategorias();
-                if (Session["Carrito"] == null) Session["Carrito"] = new List<ItemCarrito>();
+            if (!IsPostBack) { 
+                cargarProductos(); 
+                cargarCategorias(); 
+                if (Session["Carrito"] == null) Session["Carrito"] = new List<ItemCarrito>(); 
+                if (Session["Usuario"] == null) { 
+                    Response.Redirect("login.aspx"); 
+                } 
             }
 
 

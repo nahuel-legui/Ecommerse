@@ -36,5 +36,40 @@ namespace Ecomerce.Negocio
             return daoCl.altaLogicaCliente(dni);
         
         }
+        public string login(Cliente obj)
+        {
+            daoCl = new daoClientes();
+            return daoCl.login(obj);
+
+        }
+
+
+         public bool isAdmin(string dni)
+        {
+            daoCl=new daoClientes();
+            return daoCl.isAdmin(dni);
+        }
+
+        public Cliente obtenerClienteXDni(string dni)
+        {
+            daoCl = new daoClientes();
+            return daoCl.obtenerClienteXDni(dni);
+        }
+
+        public admin obtenerAdminXDni(string dni)
+        {
+            daoCl=new daoClientes();
+            return daoCl.obtenerAdminXDni(dni);
+        }
+        public bool modificarCliente(Cliente obj)
+        {
+            daoCl=new daoClientes();
+            return daoCl.modificarCliente(obj);
+        }
+        public bool cargarCliente(Cliente obj)
+        {
+            daoCl= new daoClientes();
+            return daoCl.cargarCliente(obj);
+        }
     }
 }

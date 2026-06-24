@@ -14,15 +14,24 @@ namespace Ecomerce
         {
             if (!IsPostBack)
             {
-                List<ItemCarrito> carrito = (List<ItemCarrito>)Session["Carrito"];
 
-                if (carrito != null)
+                if (Session["Usuario"] == null)
                 {
-                    RepProductos.DataSource = carrito;
-                    RepProductos.DataBind();
+                    Response.Redirect("login.aspx");
                 }
+              
+            }
+
+            List<ItemCarrito> carrito = (List<ItemCarrito>)Session["Carrito"];
+
+
+            if (carrito != null)
+            {
+                RepProductos.DataSource = carrito;
+                RepProductos.DataBind();
             }
         }
+        
 
         protected void btnMas_Click(object sender, EventArgs e)
         {

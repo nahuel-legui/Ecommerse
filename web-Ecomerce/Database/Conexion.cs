@@ -14,7 +14,7 @@ namespace database
 
         public Conexion()
         {
-            string rutaConexion = "Server = .\\; database = Ecomerce_db; integrated security = true";
+            string rutaConexion = "Server=localhost\\SQLEXPRESS; database = Ecomerce_db; integrated security = true";
             conexion = new SqlConnection(rutaConexion);
             comando = new SqlCommand();
             comando.Connection = conexion;

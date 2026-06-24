@@ -209,6 +209,22 @@
             color: white;
             cursor: pointer;
         }
+        .btn-action-activate {
+            background-color: rgba(56, 161, 105, 0.1);
+            color: #38A169;
+            border: none;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-action-activate:hover {
+            background-color: #38A169;
+            color: white;
+            cursor: pointer;
+        }
 
         /* --- FOOTER --- */
         footer {
@@ -331,6 +347,49 @@
     </div>
     <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
 </div>
+            <div class="abml-card">
+    <h2 class="abml-title"><i class="bi bi-box-seam-fill"></i> Inventario de Productos Dados de Baja</h2>
+    <p class="text-muted small mb-4">Listado actual de productos en catálogo dado de baja . Utilice la accion de la derecha para dar de alta un producto .</p>
+    
+    <div class="table-responsive">
+        <table class="table table-custom table-hover mb-0">
+            <thead>
+                <tr>
+                    <th style="width: 100px;">ID</th>
+                    <th>Producto</th>
+                    <th>Descripción</th>
+                    <th style="width: 150px;">Precio Unitario</th>
+                    <th style="width: 120px;">Stock</th>
+                    <th class="text-center" style="width: 140px;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <asp:Repeater ID="rpProductoBaja" runat="server">
+                    <ItemTemplate>
+                        <tr>
+                            <td class="fw-bold"><%# Eval("idProducto") %></td>
+                            <td><%# Eval("nombreProducto") %></td>
+                            <td class="text-muted"><%# Eval("descripcion") %></td>
+                            <td class="fw-semibold">$ <%# Eval("precioUnitario", "{0:N2}") %></td>
+                            <td>
+                                <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1"><%# Eval("stock") %> unidades</span>
+                            </td>
+                            <td class="text-center">
+                                <div class="d-flex justify-content-center gap-2">
+                                   <asp:LinkButton ID="btnAltaRow" runat="server" CssClass="btn-action-activate" ToolTip="Dar de Alta / Reactivar Producto" CommandName="Alta" CommandArgument='<%# Eval("idProducto") %>' OnClick="btnAltaRow_Click">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                   </asp:LinkButton>
+                                </div>
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </tbody>
+            <asp:Label ID="lblMensajeBaja" runat="server" Text=""></asp:Label>
+        </table>
+    </div>
+</div>
+
 
         <footer class="py-4 mt-auto">
             <div class="container text-center text-md-between d-md-flex align-items-center small">

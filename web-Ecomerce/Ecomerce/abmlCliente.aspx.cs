@@ -15,6 +15,14 @@ namespace Ecomerce
         {
             if (!IsPostBack)
             {
+              
+
+                if (Session["UsuarioAdmin"] == null)
+                {
+                    Response.Redirect("login.aspx");
+
+                }
+                
                 cargarCliente();
                 cargarClienteBaja();
 

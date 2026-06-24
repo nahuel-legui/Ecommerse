@@ -11,7 +11,14 @@ namespace Ecomerce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["Usuario"] == null)
+                {
+                    Response.Redirect("login.aspx");
+                }
+               
+            }
         }
     }
 }

@@ -9,7 +9,7 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"/>
     <style>
         
         :root {
@@ -164,7 +164,7 @@
                     <asp:Label ID="lblDni" runat="server" Text="DNI" CssClass="form-label-custom"></asp:Label>
                     <div class="input-group-custom">
                         <i class="bi bi-card-text"></i>
-                        <asp:TextBox ID="txtDni" runat="server" CssClass="form-control-custom" placeholder="DNI sin puntos"></asp:TextBox>
+                        <asp:TextBox ID="txtDni" runat="server" CssClass="form-control-custom" placeholder="DNI sin puntos" TextMode="Number" oninput="if (this.value.length > 8) this.value = this.value.slice(0, 8);"></asp:TextBox>
                     </div>
                 </div>
 
@@ -172,7 +172,7 @@
                     <asp:Label ID="lblNombre" runat="server" Text="Nombre" CssClass="form-label-custom"></asp:Label>
                     <div class="input-group-custom">
                         <i class="bi bi-person"></i>
-                        <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control-custom" placeholder="Tu nombre"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control-custom" placeholder="Tu nombre" MaxLength="20"></asp:TextBox>
                     </div>
                 </div>
 
@@ -180,7 +180,7 @@
                     <asp:Label ID="lblApellido" runat="server" Text="Apellido" CssClass="form-label-custom"></asp:Label>
                     <div class="input-group-custom">
                         <i class="bi bi-person"></i>
-                        <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control-custom" placeholder="Tu apellido"></asp:TextBox>
+                        <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control-custom" placeholder="Tu apellido" MaxLength="20"></asp:TextBox>
                     </div>
                 </div>
 
@@ -196,8 +196,16 @@
                     <asp:Label ID="lblFoto" runat="server" Text="URL Foto de Perfil" CssClass="form-label-custom"></asp:Label>
                     <div class="input-group-custom">
                         <i class="bi bi-image"></i>
-                        <asp:TextBox ID="txtFotoPerfil" runat="server" CssClass="form-control-custom" placeholder="http://ruta-de-tu-foto.jpg"></asp:TextBox>
+                        <asp:TextBox ID="txtFotoPerfil" runat="server" CssClass="form-control-custom" placeholder="http://ruta-de-tu-foto.jpg" MaxLength="500" OnTextChanged="txtFotoPerfil_TextChanged" AutoPostBack="True"></asp:TextBox>
                     </div>
+                        <asp:LinkButton ID="btnAbrirModal" runat="server" 
+                            CssClass="btn btn-primary" 
+                            data-bs-toggle="modal" data-bs-target="#miModal" 
+                            OnClientClick="return false;" OnClick="btnAbrirModal_Click"  >
+
+                            <i class="bi bi-eye-fill"></i> 
+ 
+                        </asp:LinkButton>
                 </div>
 
                 <div class="col-12 section-header">Ubicación</div>
@@ -206,7 +214,7 @@
                     <asp:Label ID="lblDireccion" runat="server" Text="Dirección" CssClass="form-label-custom"></asp:Label>
                     <div class="input-group-custom">
                         <i class="bi bi-geo-alt"></i>
-                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control-custom" placeholder="Calle y número"></asp:TextBox>
+                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control-custom" placeholder="Calle y número" MaxLength="50"></asp:TextBox>
                     </div>
                 </div>
 
@@ -214,7 +222,7 @@
                     <asp:Label ID="lblLocalidad" runat="server" Text="Localidad" CssClass="form-label-custom"></asp:Label>
                     <div class="input-group-custom">
                         <i class="bi bi-map"></i>
-                        <asp:TextBox ID="txtLocalidad" runat="server" CssClass="form-control-custom" placeholder="Ej: Buenos Aires"></asp:TextBox>
+                        <asp:TextBox ID="txtLocalidad" runat="server" CssClass="form-control-custom" placeholder="Ej: Buenos Aires" MaxLength="50"></asp:TextBox>
                     </div>
                 </div>
 
@@ -224,7 +232,7 @@
                     <asp:Label ID="lblEmail" runat="server" Text="Correo Electrónico" CssClass="form-label-custom"></asp:Label>
                     <div class="input-group-custom">
                         <i class="bi bi-envelope"></i>
-                        <asp:TextBox ID="txtCorreoElectronico" runat="server" TextMode="Email" CssClass="form-control-custom" placeholder="email@ejemplo.com"></asp:TextBox>
+                        <asp:TextBox ID="txtCorreoElectronico" runat="server" TextMode="Email" CssClass="form-control-custom" placeholder="email@ejemplo.com" MaxLength="70"></asp:TextBox>
                     </div>
                 </div>
 
@@ -232,7 +240,7 @@
                     <asp:Label ID="lblPass" runat="server" Text="Contraseña" CssClass="form-label-custom"></asp:Label>
                     <div class="input-group-custom">
                         <i class="bi bi-lock"></i>
-                        <asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password" CssClass="form-control-custom" placeholder="••••••••"></asp:TextBox>
+                        <asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password" CssClass="form-control-custom" placeholder="••••••••" MaxLength="12"></asp:TextBox>
                     </div>
                 </div>
 
@@ -240,13 +248,31 @@
                     <asp:Label ID="lblPassConfirm" runat="server" Text="Repetir Contraseña" CssClass="form-label-custom"></asp:Label>
                     <div class="input-group-custom">
                         <i class="bi bi-lock-fill"></i>
-                        <asp:TextBox ID="txtContraseniaConfirm" runat="server" TextMode="Password" CssClass="form-control-custom" placeholder="••••••••"></asp:TextBox>
+                        <asp:TextBox ID="txtContraseniaConfirm" runat="server" TextMode="Password" CssClass="form-control-custom" placeholder="••••••••" MaxLength="12"></asp:TextBox>
                     </div>
                 </div>
             </div>
+            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+            <asp:Button ID="btnRegistrar" runat="server" Text="Crear Cuenta Ahora" CssClass="btn-principal" OnClick="btnRegistrar_Click" />
 
-            <asp:Button ID="btnRegistrar" runat="server" Text="Crear Cuenta Ahora" CssClass="btn-principal" />
+            
+ 
+        <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered"> <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Previsuliazacion de imagen</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <asp:Image ID="imgFoto" runat="server" />
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
+        </div>
+        </div>
+        </div>
+        </div>
             <div class="register-footer">
                 <span class="text-muted">¿Ya tienes cuenta?</span> 
                 <asp:HyperLink ID="hypLinkLogin" runat="server" NavigateUrl="~/login.aspx" CssClass="link-custom">Inicia sesión aquí</asp:HyperLink>
@@ -255,6 +281,7 @@
         </div>
     </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
