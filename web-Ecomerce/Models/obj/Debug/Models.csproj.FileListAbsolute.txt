@@ -1,0 +1,12 @@
+D:\Ecommerse\web-Ecomerce\Models\bin\Debug\Models.dll
+D:\Ecommerse\web-Ecomerce\Models\bin\Debug\Models.pdb
+D:\Ecommerse\web-Ecomerce\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+D:\Ecommerse\web-Ecomerce\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\Ecommerse\web-Ecomerce\Models\obj\Debug\Models.dll
+D:\Ecommerse\web-Ecomerce\Models\obj\Debug\Models.pdb
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Models\bin\Debug\Models.dll
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Models\bin\Debug\Models.pdb
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Models\obj\Debug\models.csproj.AssemblyReference.cache
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Models\obj\Debug\models.csproj.CoreCompileInputs.cache
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Models\obj\Debug\Models.dll
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Models\obj\Debug\Models.pdb

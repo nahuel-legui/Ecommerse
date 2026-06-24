@@ -175,3 +175,11 @@ D:\Ecommerse\web-Ecomerce\Ecomerce\obj\Debug\Ecomerce.csproj.CoreCompileInputs.c
 D:\Ecommerse\web-Ecomerce\Ecomerce\obj\Debug\Ecomerce.csproj.Up2Date
 D:\Ecommerse\web-Ecomerce\Ecomerce\obj\Debug\Ecomerce.dll
 D:\Ecommerse\web-Ecomerce\Ecomerce\obj\Debug\Ecomerce.pdb
+D:\Ecommerse\web-Ecomerce\Ecomerce\bin\Database.dll
+D:\Ecommerse\web-Ecomerce\Ecomerce\bin\Models.dll
+D:\Ecommerse\web-Ecomerce\Ecomerce\bin\Database.pdb
+D:\Ecommerse\web-Ecomerce\Ecomerce\bin\Models.pdb
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Ecomerce\bin\Database.dll
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Ecomerce\bin\Models.dll
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Ecomerce\bin\Database.pdb
+C:\Users\snleg\OneDrive\Escritorio\ecomerce\web-Ecomerce\Ecomerce\bin\Models.pdb

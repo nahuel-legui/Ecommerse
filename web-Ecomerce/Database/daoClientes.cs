@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-using Ecomerce.Entidad;
+using Models;
 
-namespace Ecomerce.Datos
+namespace database
 {
     public class daoClientes
     {

@@ -1,4 +1,4 @@
-﻿using Ecomerce.Entidad;
+﻿using Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecomerce.Datos
+namespace database
 {
     public class daoDetalleVentas
     {
@@ -30,7 +30,7 @@ namespace Ecomerce.Datos
 
                     int idProducto = (int)lector["idProducto_Pd_Dv"];
 
-                    aux.Producto = pr.obtenerProductoXId(idProducto);
+                    aux.Producto = pr.obtenerProductoXIdSinFiltroActivo(idProducto);
 
                     aux.idVenta = idVenta;
                     aux.cantidad = (int)lector["cantidad_Dv"];

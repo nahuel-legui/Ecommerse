@@ -1,4 +1,4 @@
-﻿using Ecomerce.Entidad;
+﻿using Models;
 using Ecomerce.Negocio;
 using System;
 using System.Collections.Generic;
@@ -15,20 +15,13 @@ namespace Ecomerce
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Configuracion inicial de la pantalla
-            if (!IsPostBack)
-            {
-                cargarProductos();
-                cargarCategorias();
-                if (Session["Carrito"] == null) Session["Carrito"] = new List<Producto>();
-                
-                
-                if (Session["Usuario"] == null)
-                {
-                    Response.Redirect("login.aspx");
-                }
-                    
-                
+            if (!IsPostBack) { 
+                cargarProductos(); 
+                cargarCategorias(); 
+                if (Session["Carrito"] == null) Session["Carrito"] = new List<ItemCarrito>(); 
+                if (Session["Usuario"] == null) { 
+                    Response.Redirect("login.aspx"); 
+                } 
             }
 
 
@@ -88,21 +81,41 @@ namespace Ecomerce
             Button btn = (Button)sender;
             int idProducto = int.Parse(btn.CommandArgument);
 
-            List<Producto> carrito = (List<Producto>)Session["Carrito"];
+            List<ItemCarrito> carrito = (List<ItemCarrito>)Session["Carrito"];
             List<Producto> lista = (List<Producto>)Session["ListaProductos"];
 
+            Producto producto = lista.Find(x => x.idProducto == idProducto);
 
-            Producto producto = lista.Find(x =>
-                    x.idProducto == idProducto);
-            if (producto != null) carrito.Add(producto);
+            if (producto != null)
+            {
+                ItemCarrito item = carrito.Find(x => x.Producto.idProducto == idProducto);
 
-            Session["Carrito"] = carrito;
+                if (item != null)
+                {
+                    item.Cantidad++;
+                }
+                else
+                {
+                    carrito.Add(new ItemCarrito
+                    {
+                        Producto = producto,
+                        Cantidad = 1
+                    });
+                }
+            }
         }
 
         public int CantidadCarrito()
         {
-            if (Session["Carrito"] == null) return 0;
-            return ((List<Producto>)Session["Carrito"]).Count;
+            List<ItemCarrito> carrito = (List<ItemCarrito>)Session["Carrito"];
+
+            int total = 0;
+
+            foreach (ItemCarrito item in carrito)
+            {
+                total +=  item.Cantidad;
+            }
+            return total;
         }
     }
  }

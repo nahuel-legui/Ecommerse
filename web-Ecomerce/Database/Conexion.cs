@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Ecomerce.Datos
+namespace database
 {
     public class Conexion
     {

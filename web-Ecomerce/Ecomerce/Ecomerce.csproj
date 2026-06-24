@@ -125,14 +125,6 @@
     <Compile Include="carrito.aspx.designer.cs">
       <DependentUpon>carrito.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Datos\Conexion.cs" />
-    <Compile Include="Datos\daoClientes.cs" />
-    <Compile Include="Datos\daoDetalleVentas.cs" />
-    <Compile Include="Datos\daoProductos.cs" />
-    <Compile Include="Datos\daoVentas.cs" />
-    <Compile Include="Entidad\admin.cs" />
-    <Compile Include="Entidad\Categoria.cs" />
-    <Compile Include="Entidad\seguimiento.cs" />
     <Compile Include="homeAdmin.aspx.cs">
       <DependentUpon>homeAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,10 +142,6 @@
     <Compile Include="productos.aspx.designer.cs">
       <DependentUpon>productos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Entidad\Cliente.cs" />
-    <Compile Include="Entidad\DetalleVenta.cs" />
-    <Compile Include="Entidad\Producto.cs" />
-    <Compile Include="Entidad\Venta.cs" />
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -200,7 +188,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Database\database.csproj">
+      <Project>{3d87c9a3-c7bc-402d-b7e2-0907cf292bdb}</Project>
+      <Name>database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\models.csproj">
+      <Project>{a9a86eff-1f6d-49ae-b431-7cf682ae17d0}</Project>
+      <Name>models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

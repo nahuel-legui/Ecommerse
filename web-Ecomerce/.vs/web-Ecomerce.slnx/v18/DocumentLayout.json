@@ -1,0 +1,316 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\registrarse.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\registrarse.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\registrarse.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\registrarse.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\perfil.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\perfil.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\carrito.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\carrito.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\productos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\productos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\abmlventa.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\abmlventa.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\reporte.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\reporte.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\home.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\home.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\negocio\\negocioventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\negocio\\negocioventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\abmlproducto.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\abmlproducto.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\negocio\\negocioproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\negocio\\negocioproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\abmlventa.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\abmlventa.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\abmlcliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\abmlcliente.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\ecomerce\\carrito.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\carrito.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "perfil.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\perfil.aspx.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\perfil.aspx.cs",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\perfil.aspx.cs",
+              "RelativeToolTip": "Ecomerce\\perfil.aspx.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T16:41:44.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\login.aspx.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\login.aspx.cs",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\login.aspx.cs",
+              "RelativeToolTip": "Ecomerce\\login.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T16:41:27.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "registrarse.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\registrarse.aspx.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\registrarse.aspx.cs",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\registrarse.aspx.cs",
+              "RelativeToolTip": "Ecomerce\\registrarse.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T16:40:18.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "home.aspx",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\home.aspx",
+              "RelativeDocumentMoniker": "Ecomerce\\home.aspx",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\home.aspx",
+              "RelativeToolTip": "Ecomerce\\home.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-23T23:43:56.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "productos.aspx",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\productos.aspx",
+              "RelativeDocumentMoniker": "Ecomerce\\productos.aspx",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\productos.aspx",
+              "RelativeToolTip": "Ecomerce\\productos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-16T23:26:06.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "registrarse.aspx",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\registrarse.aspx",
+              "RelativeDocumentMoniker": "Ecomerce\\registrarse.aspx",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\registrarse.aspx",
+              "RelativeToolTip": "Ecomerce\\registrarse.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-23T23:45:05.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "abmlProducto.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\abmlProducto.aspx.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\abmlProducto.aspx.cs",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\abmlProducto.aspx.cs",
+              "RelativeToolTip": "Ecomerce\\abmlProducto.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T00:28:01.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "home.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\home.aspx.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\home.aspx.cs",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\home.aspx.cs",
+              "RelativeToolTip": "Ecomerce\\home.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:43:03.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "productos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\productos.aspx.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\productos.aspx.cs",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\productos.aspx.cs",
+              "RelativeToolTip": "Ecomerce\\productos.aspx.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAmwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T23:26:10.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "login.aspx",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\login.aspx",
+              "RelativeDocumentMoniker": "Ecomerce\\login.aspx",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\login.aspx",
+              "RelativeToolTip": "Ecomerce\\login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-23T23:44:48.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "carrito.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\carrito.aspx.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\carrito.aspx.cs",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\carrito.aspx.cs",
+              "RelativeToolTip": "Ecomerce\\carrito.aspx.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwBwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T22:32:40.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NegocioVenta.cs",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\Negocio\\NegocioVenta.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\Negocio\\NegocioVenta.cs",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\Negocio\\NegocioVenta.cs",
+              "RelativeToolTip": "Ecomerce\\Negocio\\NegocioVenta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:43:07.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "reporte.aspx",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\reporte.aspx",
+              "RelativeDocumentMoniker": "Ecomerce\\reporte.aspx",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\reporte.aspx",
+              "RelativeToolTip": "Ecomerce\\reporte.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-23T23:45:09.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NegocioProducto.cs",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\Negocio\\NegocioProducto.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\Negocio\\NegocioProducto.cs",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\Negocio\\NegocioProducto.cs",
+              "RelativeToolTip": "Ecomerce\\Negocio\\NegocioProducto.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwAEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T00:27:54.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "abmlVenta.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\abmlVenta.aspx.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\abmlVenta.aspx.cs",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\abmlVenta.aspx.cs",
+              "RelativeToolTip": "Ecomerce\\abmlVenta.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T00:24:45.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "abmlVenta.aspx",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\abmlVenta.aspx",
+              "RelativeDocumentMoniker": "Ecomerce\\abmlVenta.aspx",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\abmlVenta.aspx",
+              "RelativeToolTip": "Ecomerce\\abmlVenta.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-23T00:24:40.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "abmlCliente.aspx",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\abmlCliente.aspx",
+              "RelativeDocumentMoniker": "Ecomerce\\abmlCliente.aspx",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\abmlCliente.aspx",
+              "RelativeToolTip": "Ecomerce\\abmlCliente.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-19T23:30:17.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "carrito.aspx",
+              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\carrito.aspx",
+              "RelativeDocumentMoniker": "Ecomerce\\carrito.aspx",
+              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\carrito.aspx",
+              "RelativeToolTip": "Ecomerce\\carrito.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-06-18T22:32:31.726Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

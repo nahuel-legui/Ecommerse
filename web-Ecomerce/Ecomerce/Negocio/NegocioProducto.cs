@@ -1,5 +1,5 @@
-﻿using Ecomerce.Datos;
-using Ecomerce.Entidad;
+﻿using database;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

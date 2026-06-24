@@ -265,7 +265,7 @@
         <%
         int contador = 0;
 
-        foreach (Ecomerce.Entidad.Producto item in productosList)
+        foreach (Models.Producto item in productosList)
         {
             if (contador >= 4)
                 break;
@@ -297,7 +297,6 @@
                     Ver más productos <i class="bi bi-arrow-right ms-1"></i>
                 </asp:HyperLink>
             </div>
-        </div>
 
         <footer class="py-5">
             <div class="container">
