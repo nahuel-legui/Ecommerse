@@ -278,5 +278,39 @@ namespace Ecomerce.Datos
             }
         }
 
+        public bool cargarCliente(Cliente obj)
+        {
+            cn= new Conexion();
+            try
+            {
+                string consulta = "insert into Clientes (dni_Cl, nombre_Cl, apellido_Cl, " +
+                    "direccion_Cl, fotoPerfil_Cl, localidad_Cl, fechaNacimiento_Cl, " +
+                    "correoElectronicp_Cl, contrasenia_Cl ) values(@dni,@nombre,@apellido," +
+                    "@direccion,@foto,@localidad,@fecha,@correo,@contrasenia)";
+                cn.setearConsulta(consulta);
+                cn.setearParametros("@dni", obj.dni);
+                cn.setearParametros("@nombre", obj.nombre);
+                cn.setearParametros("@apellido", obj.apellido);
+                cn.setearParametros("@direccion", obj.direccion);
+                cn.setearParametros("@foto", obj.fotoPerfil);
+                cn.setearParametros("@localidad", obj.localidad);
+                cn.setearParametros("@fecha", obj.fechaNacimiento);
+                cn.setearParametros("@correo", obj.correoElectronico);
+                cn.setearParametros("@contrasenia", obj.contrasenia);
+
+                int filas= cn.ejecutarAccion();
+
+                return filas > 0;
+
+            }
+            catch (Exception ex )
+            {
+
+                throw ex ;
+            }
+
+
+        }
+
     }
 }

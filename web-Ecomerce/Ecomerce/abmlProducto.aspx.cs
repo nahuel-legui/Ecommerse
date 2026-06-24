@@ -21,11 +21,11 @@ namespace Ecomerce
             {
                 
 
-                /*if (Session["UsuarioAdmin"] == null)
+                if (Session["UsuarioAdmin"] == null)
                 {
                     Response.Redirect("login.aspx");
 
-                }*/
+                }
                 
                 cargarProductos();
                 cargarCategorias();

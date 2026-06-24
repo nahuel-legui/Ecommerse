@@ -66,5 +66,10 @@ namespace Ecomerce.Negocio
             daoCl=new daoClientes();
             return daoCl.modificarCliente(obj);
         }
+        public bool cargarCliente(Cliente obj)
+        {
+            daoCl= new daoClientes();
+            return daoCl.cargarCliente(obj);
+        }
     }
 }

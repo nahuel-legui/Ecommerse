@@ -348,8 +348,8 @@
     <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
 </div>
             <div class="abml-card">
-    <h2 class="abml-title"><i class="bi bi-box-seam-fill"></i> Inventario de Productos</h2>
-    <p class="text-muted small mb-4">Listado actual de productos en catálogo. Utilice las acciones de la derecha para modificar valores o dar de baja un producto.</p>
+    <h2 class="abml-title"><i class="bi bi-box-seam-fill"></i> Inventario de Productos Dados de Baja</h2>
+    <p class="text-muted small mb-4">Listado actual de productos en catálogo dado de baja . Utilice la accion de la derecha para dar de alta un producto .</p>
     
     <div class="table-responsive">
         <table class="table table-custom table-hover mb-0">
