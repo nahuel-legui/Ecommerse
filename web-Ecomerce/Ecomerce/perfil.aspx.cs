@@ -14,6 +14,7 @@ namespace Ecomerce
     {
         private void rellenarPerfil()
         {
+            //comentarios
             if (Session["Usuario"] != null)
             {
                 Cliente objCliente = new Cliente();
