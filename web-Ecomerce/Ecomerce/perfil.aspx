@@ -208,6 +208,31 @@
             color: #ffffff;
             cursor: pointer;
         }
+        /* Botón de navegación: Ver mis compras */
+    .btn-mis-compras-custom {
+        background-color: rgba(43, 108, 176, 0.1); /* Fondo azul traslúcido muy suave */
+        color: var(--color-principal); /* Azul corporativo #2B6CB0 */
+        border: 1px solid rgba(43, 108, 176, 0.2);
+        padding: 0.5rem 1.2rem;
+        border-radius: 8px; /* Mismo radio de curvatura de la marca */
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem; /* Espaciado perfecto entre el icono de la bolsa y el texto */
+        transition: all 0.2s ease;
+        margin-bottom:3rem;
+    }
+
+    /* Efecto al pasar el mouse (Hover) */
+    .btn-mis-compras-custom:hover {
+        background-color: var(--color-principal); /* Cambia a azul pleno */
+        color: #ffffff !important; /* Texto blanco */
+        border-color: var(--color-principal);
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(43, 108, 176, 0.15); /* Sombra suave de enfoque */
+    }
 
         /* --- FOOTER --- */
         footer {
@@ -290,7 +315,9 @@
                         <asp:Label ID="lblEmailPerfil" runat="server" Text="" CssClass="profile-email-sub" DisplayMode="Paragraph"></asp:Label>
                         
                         <hr class="my-4 border-light-subtle" />
-                        
+                        <asp:HyperLink ID="lnkMisCompras" runat="server" NavigateUrl="~/misCompras.aspx" CssClass="btn-mis-compras-custom">
+                         <i class="bi bi-bag-check-fill"></i> Ver mis compras
+                        </asp:HyperLink>
                         <!-- Botón de Cerrar Sesión -->
                         <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="btn-logout" OnClick="btnCerrarSesion_Click" />
                     </div>

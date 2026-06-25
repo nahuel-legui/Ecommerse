@@ -1,40 +1,62 @@
 ﻿using Ecomerce.Negocio;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Ecomerce
 {
-    public partial class adminSeguimiento : System.Web.UI.Page
+    public partial class misCompras : System.Web.UI.Page
     {
-        public string clasesPendiente = "badge bg-secondary-subtle text-secondary border border-secondary-subtle px-2 py-1 w-100 text-start";
-        public string clasesEnCamino = "badge bg-warning-subtle text-warning-emphasis border border-warning-subtle px-2 py-1 w-100 text-start";
-        public string clasesEntregado = "badge bg-success-subtle text-success border border-success-subtle px-2 py-1 w-100 text-start";
+        public List<Venta> ventaList { get; set; }
+        public string VentasJson { get; private set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-
-                if (Session["UsuarioAdmin"] == null)
+                if (Session["Usuario"] == null)
                 {
                     Response.Redirect("home.aspx");
-
                 }
                 cargarVentas();
+                NegocioVenta ventas = new NegocioVenta();
+                ventaList = ventas.obtenerTodasLasVentas();
+
+                var datosModal = ventaList.Select(v => new
+                {
+                    idVenta = v.idVenta,
+                    dniCliente = v.dniCliente,
+                    total = v.total,
+                    fechaVenta = v.fechaVenta.ToString("dd/MM/yyyy"),
+                    detalles = (v.detalles ?? new List<DetalleVenta>()).Select(d => new
+                    {
+                        idProducto = d.Producto.idProducto,
+                        nombreProducto = d.Producto.nombreProducto,
+                        cantidad = d.cantidad,
+                        precioUnitario = d.precioUnitario
+                    }).ToList()
+                }).ToList();
+
+                VentasJson = new JavaScriptSerializer().Serialize(datosModal);
             }
 
         }
+
         public void cargarVentas()
         {
-            NegocioVenta objVenta = new NegocioVenta();
-            rptSeguimiento.DataSource = objVenta.obtenerTodasLasVentas();
-            rptSeguimiento.DataBind();
+            Cliente objCliente = new Cliente();
+            objCliente = (Cliente)Session["Usuario"];
+            NegocioVenta venta = new NegocioVenta();
 
+            RepCompras.DataSource = venta.ObtenerVentasXCliente(objCliente.dni);
+            RepCompras.DataBind();
 
         }
+
         protected string ObtenerClasesEstado(object enCaminoObj, object entregadoObj)
         {
             // Convertimos los objetos del Eval de forma segura a booleanos
@@ -75,27 +97,6 @@ namespace Ecomerce
             {
                 return "<i class='bi bi-clock me-1'></i> Pendiente";
             }
-        }
-
-        protected void btnEnCamino_Click(object sender, EventArgs e)
-        {
-            int idVenta = int.Parse(((LinkButton)sender).CommandArgument);
-            NegocioVenta objVenta= new NegocioVenta();
-            if (objVenta.enCamino(idVenta))
-            {
-                cargarVentas();
-            }
-        }
-
-        protected void btnEntregado_Click(object sender, EventArgs e)
-        {
-            int idVenta = int.Parse(((LinkButton)sender).CommandArgument);
-            NegocioVenta objVenta = new NegocioVenta();
-            if (objVenta.entregado(idVenta))
-            {
-                cargarVentas();
-            }
-            
         }
     }
 }
