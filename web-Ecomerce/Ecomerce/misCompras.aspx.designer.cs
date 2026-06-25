@@ -11,7 +11,7 @@ namespace Ecomerce
 {
 
 
-    public partial class adminSeguimiento
+    public partial class misCompras
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace Ecomerce
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lnkLogoAdmin.
+        /// Control lnkHome.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkLogoAdmin;
+        protected global::System.Web.UI.WebControls.HyperLink lnkHome;
 
         /// <summary>
         /// Control lnkVolver.
@@ -42,12 +42,12 @@ namespace Ecomerce
         protected global::System.Web.UI.WebControls.HyperLink lnkVolver;
 
         /// <summary>
-        /// Control rptSeguimiento.
+        /// Control RepCompras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptSeguimiento;
+        protected global::System.Web.UI.WebControls.Repeater RepCompras;
     }
 }

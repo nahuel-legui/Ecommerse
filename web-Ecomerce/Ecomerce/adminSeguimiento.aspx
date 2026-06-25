@@ -207,75 +207,37 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <asp:Repeater ID="rptSeguimiento" runat="server">
+                                <ItemTemplate>
+
                             <!-- Ejemplo 1: Venta Recién Ingresada (Pendiente) -->
                             <tr>
-                                <td class="fw-bold">#20441</td>
-                                <td>08/06/2026 14:22</td>
-                                <td>38444555</td>
-                                <td class="fw-medium">$ 154.990,00</td>
+                                <td class="fw-bold">#<%# Eval("idVenta") %></td>
+                                <td><%# Eval("fechaVenta") %></td>
+                                <td><%# Eval("dniCliente") %></td>
+                                <td class="fw-medium">$ <%# Eval("total") %></td>
                                 <td>
-                                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle px-2 py-1 w-100 text-start">
-                                        <i class="bi bi-clock me-1"></i> Pendiente
-                                    </span>
+                                    <asp:Label ID="lblEstadoPaquete" runat="server" 
+                                    CssClass='<%# ObtenerClasesEstado(Eval("enCamino"), Eval("entregado")) %>'>
+                                     <%# ObtenerTextoEIconoEstado(Eval("enCamino"), Eval("entregado")) %>
+                                    </asp:Label>
                                 </td>
                                 <td class="text-center">
                                     <div class="d-flex justify-content-center gap-2">
-                                        <button type="button" class="btn-status-transit" title="Marcar En Camino">
+                                        <asp:LinkButton  runat="server" CssClass="btn-status-transit" title="Marcar En Camino" Enabled="True" CommandName="Encamino" CommandArgument='<%# Eval("idVenta") %>' OnClick="btnEnCamino_Click" ID="btnEnCamino">
+                                            
                                             <i class="bi bi-truck"></i> En Camino
-                                        </button>
-                                        <button type="button" class="btn-status-delivered" title="Marcar como Entregado">
+                                        </asp:LinkButton>
+                                        <asp:LinkButton runat="server" Cssclass="btn-status-delivered" title="Marcar como Entregado" CommandName="Entragado" CommandArgument='<%# Eval("idVenta") %>' OnClick="btnEntregado_Click" ID="btnEntregado" Enabled="True">
                                             <i class="bi bi-check-circle-fill"></i> Entregado
-                                        </button>
+                                        </asp:LinkButton>
                                     </div>
                                 </td>
                             </tr>
+                                </ItemTemplate>
+                            </asp:Repeater>
                             
-                            <!-- Ejemplo 2: Venta en Tránsito (En Camino) -->
-                            <tr>
-                                <td class="fw-bold">#20442</td>
-                                <td>09/06/2026 10:05</td>
-                                <td>40111222</td>
-                                <td class="fw-medium">$ 65.000,00</td>
-                                <td>
-                                    <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle px-2 py-1 w-100 text-start">
-                                        <i class="bi bi-truck me-1"></i> En Camino
-                                    </span>
-                                </td>
-                                <td class="text-center">
-                                    <div class="d-flex justify-content-center gap-2">
-                                        <%-- Deshabilitado visualmente puesto que ya se encuentra en camino --%>
-                                        <button type="button" class="btn-status-transit opacity-50" disabled="disabled" title="Ya está en camino">
-                                            <i class="bi bi-truck"></i> En Camino
-                                        </button>
-                                        <button type="button" class="btn-status-delivered" title="Marcar como Entregado">
-                                            <i class="bi bi-check-circle-fill"></i> Entregado
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <!-- Ejemplo 3: Venta Finalizada (Entregada) -->
-                            <tr>
-                                <td class="fw-bold">#20443</td>
-                                <td>09/06/2026 15:30</td>
-                                <td>35999888</td>
-                                <td class="fw-medium">$ 18.500,00</td>
-                                <td>
-                                    <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 w-100 text-start">
-                                        <i class="bi bi-check-circle-fill me-1"></i> Entregado
-                                    </span>
-                                </td>
-                                <td class="text-center">
-                                    <div class="d-flex justify-content-center gap-2">
-                                        <button type="button" class="btn-status-transit opacity-50" disabled="disabled">
-                                            <i class="bi bi-truck"></i> En Camino
-                                        </button>
-                                        <button type="button" class="btn-status-delivered opacity-50" disabled="disabled">
-                                            <i class="bi bi-check-circle-fill"></i> Entregado
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
+                           
                         </tbody>
                     </table>
                 </div>

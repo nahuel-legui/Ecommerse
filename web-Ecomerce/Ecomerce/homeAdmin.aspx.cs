@@ -15,7 +15,7 @@ namespace Ecomerce
 
                 if (Session["UsuarioAdmin"]==null)
                 {
-                    Response.Redirect("login.aspx");
+                    Response.Redirect("home.aspx");
 
                 }
             }

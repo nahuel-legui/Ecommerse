@@ -13,10 +13,7 @@ namespace Ecomerce
         {
             if (!IsPostBack)
             {
-                if (Session["Usuario"] == null)
-                {
-                    Response.Redirect("login.aspx");
-                }
+                
                
             }
         }
