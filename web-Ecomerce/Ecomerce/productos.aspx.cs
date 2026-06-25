@@ -19,9 +19,7 @@ namespace Ecomerce
                 cargarProductos(); 
                 cargarCategorias(); 
                 if (Session["Carrito"] == null) Session["Carrito"] = new List<ItemCarrito>(); 
-                if (Session["Usuario"] == null) { 
-                    Response.Redirect("login.aspx"); 
-                } 
+                
             }
 
 
@@ -78,6 +76,9 @@ namespace Ecomerce
 
         protected void btnAgregarItem(object sender, EventArgs e)
         {
+            if (Session["Usuario"]==null) {
+                return;
+            }
             Button btn = (Button)sender;
             int idProducto = int.Parse(btn.CommandArgument);
 

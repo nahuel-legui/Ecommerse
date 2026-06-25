@@ -28,6 +28,8 @@ idVenta_Vn int identity(1,1) not null,
 dni_Cl_Vn char(8) not null, 
 total_Vn decimal(8,2) not null default 0, 
 fechaVenta_Vn date default getDate() not null ,
+enCamino_Sg bit not null default 0,
+entregado_Sg bit not null default 0,
 constraint pkVentas primary key (idVenta_Vn),
 constraint fkClientes_Ventas foreign key(dni_Cl_Vn) references Clientes (dni_Cl)
 )
@@ -66,15 +68,7 @@ constraint fkVentaas_DetalleVenta foreign key (idVentas_Vn_Dv) references Ventas
 )
 go
 
-create table seguimiento(
-idSeguimiento_Sg int identity(1,1) not null,
-idVenta_Vn_Sg int not null,
-enCamino_Sg bit not null,
-entregado_Sg bit not null,
-constraint pkSeguimiento primary key (idSeguimiento_Sg),
-constraint fkVenta_Seguimiento foreign key (idVenta_Vn_Sg) references Ventas (idVenta_Vn)
-)
-go
+
 
 
 
@@ -129,12 +123,3 @@ insert into DetalleVenta (idProducto_Pd_Dv, idVentas_Vn_Dv, cantidad_Dv, precioU
 (2, 5, 1, 59.50);  -- Venta 5: 1 Auricular
 go
 
--- 6. INSERTAR SEGUIMIENTO
--- Corresponde a las 5 ventas creadas
-insert into seguimiento (idVenta_Vn_Sg, enCamino_Sg, entregado_Sg) values
-(1, 0, 1), -- Venta 1: Entregada
-(2, 0, 1), -- Venta 2: Entregada
-(3, 1, 0), -- Venta 3: En camino
-(4, 0, 0), -- Venta 4: En preparación (no enviado, no entregado)
-(5, 0, 0); -- Venta 5: En preparación
-go

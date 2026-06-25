@@ -153,6 +153,7 @@
             text-decoration: none;
             transition: all 0.2s ease;
             display: inline-block;
+            margin-bottom:4rem;
         }
 
         .btn-ver-mas:hover {
