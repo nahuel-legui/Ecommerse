@@ -14,6 +14,8 @@ namespace Models
 
         public List<DetalleVenta> detalles { get; set; }
 
+        public bool enCamino { get; set; }
+        public bool entregado { get; set; }
 
     }
 }

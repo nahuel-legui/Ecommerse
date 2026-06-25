@@ -74,6 +74,7 @@
     <Content Include="adminSeguimiento.aspx" />
     <Content Include="carrito.aspx" />
     <Content Include="homeAdmin.aspx" />
+    <Content Include="misCompras.aspx" />
     <Content Include="productos.aspx" />
     <Content Include="home.aspx" />
     <Content Include="login.aspx" />
@@ -131,6 +132,13 @@
     </Compile>
     <Compile Include="homeAdmin.aspx.designer.cs">
       <DependentUpon>homeAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="misCompras.aspx.cs">
+      <DependentUpon>misCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="misCompras.aspx.designer.cs">
+      <DependentUpon>misCompras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Negocio\NegocioCliente.cs" />
     <Compile Include="Negocio\NegocioProducto.cs" />
