@@ -12,26 +12,23 @@ namespace Ecomerce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["Usuario"] == null)
             {
-
-                if (Session["Usuario"] == null)
-                {
-                    Response.Redirect("home.aspx");
-                }
-              
+                Response.Redirect("home.aspx");
             }
 
-            List<ItemCarrito> carrito = (List<ItemCarrito>)Session["Carrito"];
-
-
-            if (carrito != null)
+            if (!Page.IsPostBack)
             {
-                RepProductos.DataSource = carrito;
-                RepProductos.DataBind();
+                CargarCarrito();
             }
         }
-        
+
+        private void CargarCarrito()
+        {
+            RepProductos.DataSource = Session["Carrito"] as List<ItemCarrito>;
+            RepProductos.DataBind();
+        }
+
 
         protected void btnMas_Click(object sender, EventArgs e)
         {

@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\",
+  "WorkspaceRootPath": "D:\\Ecommerse\\web-Ecomerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|d:\\ecommerse\\web-ecomerce\\ecomerce\\carrito.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\carrito.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|c:\\users\\snleg\\onedrive\\escritorio\\ecomerce\\web-ecomerce\\ecomerce\\perfil.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\perfil.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|d:\\ecommerse\\web-ecomerce\\ecomerce\\carrito.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\carrito.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|d:\\ecommerse\\web-ecomerce\\ecomerce\\productos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\productos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|d:\\ecommerse\\web-ecomerce\\ecomerce\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2838BAB8-99E3-49AC-9F8B-EAE0C266AF22}|Ecomerce\\Ecomerce.csproj|solutionrelative:ecomerce\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "home.aspx",
-              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\home.aspx",
-              "RelativeDocumentMoniker": "Ecomerce\\home.aspx",
-              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\home.aspx",
-              "RelativeToolTip": "Ecomerce\\home.aspx",
+              "Title": "carrito.aspx.cs",
+              "DocumentMoniker": "D:\\Ecommerse\\web-Ecomerce\\Ecomerce\\carrito.aspx.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\carrito.aspx.cs",
+              "ToolTip": "D:\\Ecommerse\\web-Ecomerce\\Ecomerce\\carrito.aspx.cs",
+              "RelativeToolTip": "Ecomerce\\carrito.aspx.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T23:13:42.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "productos.aspx.cs",
+              "DocumentMoniker": "D:\\Ecommerse\\web-Ecomerce\\Ecomerce\\productos.aspx.cs",
+              "RelativeDocumentMoniker": "Ecomerce\\productos.aspx.cs",
+              "ToolTip": "D:\\Ecommerse\\web-Ecomerce\\Ecomerce\\productos.aspx.cs",
+              "RelativeToolTip": "Ecomerce\\productos.aspx.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T23:11:47.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "productos.aspx",
+              "DocumentMoniker": "D:\\Ecommerse\\web-Ecomerce\\Ecomerce\\productos.aspx",
+              "RelativeDocumentMoniker": "Ecomerce\\productos.aspx",
+              "ToolTip": "D:\\Ecommerse\\web-Ecomerce\\Ecomerce\\productos.aspx",
+              "RelativeToolTip": "Ecomerce\\productos.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-06-25T18:42:29.024Z",
+              "WhenOpened": "2026-06-26T23:11:43.748Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "perfil.aspx",
-              "DocumentMoniker": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\perfil.aspx",
-              "RelativeDocumentMoniker": "Ecomerce\\perfil.aspx",
-              "ToolTip": "C:\\Users\\snleg\\OneDrive\\Escritorio\\ecomerce\\web-Ecomerce\\Ecomerce\\perfil.aspx",
-              "RelativeToolTip": "Ecomerce\\perfil.aspx",
+              "Title": "carrito.aspx",
+              "DocumentMoniker": "D:\\Ecommerse\\web-Ecomerce\\Ecomerce\\carrito.aspx",
+              "RelativeDocumentMoniker": "Ecomerce\\carrito.aspx",
+              "ToolTip": "D:\\Ecommerse\\web-Ecomerce\\Ecomerce\\carrito.aspx",
+              "RelativeToolTip": "Ecomerce\\carrito.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-06-25T18:43:23.712Z",
+              "WhenOpened": "2026-06-26T23:11:14.572Z",
               "EditorCaption": ""
             }
           ]
