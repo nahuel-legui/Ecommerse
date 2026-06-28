@@ -89,6 +89,8 @@ namespace Ecomerce
 
             if (producto != null)
             {
+                if(PuedeAgregarAlCarrito(producto, carrito))
+                {
                 ItemCarrito item = carrito.Find(x => x.Producto.idProducto == idProducto);
 
                 if (item != null)
@@ -97,11 +99,31 @@ namespace Ecomerce
                 }
                 else
                 {
-                    carrito.Add(new ItemCarrito
+                    item = new ItemCarrito
                     {
                         Producto = producto,
-                        Cantidad = 1
-                    });
+                        Cantidad = 1,
+                        StockTotal = producto.stock
+                    };
+                    carrito.Add(item);
+                }
+                    int stockRestante = item.StockTotal - item.Cantidad;
+                    litMensaje.Text = $"<strong>{producto.nombreProducto}</strong> agregado al carrito correctamente, {(stockRestante == 0 ? "Te llevas la ultima unidad del producto" :  $"Solo quedan {stockRestante} unidades")}.";
+                ScriptManager.RegisterStartupScript(this, GetType(), "MostrarToast", 
+                    @"window.addEventListener('load', function () {
+                    const toastElement = document.getElementById('toastCarrito');
+                    const toast = bootstrap.Toast.getOrCreateInstance(toastElement);
+                    toast.show();
+                    });", true);
+                } else
+                {
+                    litError.Text = $"<strong>Error: {producto.nombreProducto}</strong> no se puede agregar al carrito, no hay stock disponible.";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "MostrarToast",
+                    @"window.addEventListener('load', function () {
+                    const toastElement = document.getElementById('toastError');
+                    const toast = bootstrap.Toast.getOrCreateInstance(toastElement);
+                    toast.show();
+                    });", true);
                 }
             }
         }
@@ -117,6 +139,16 @@ namespace Ecomerce
                 total +=  item.Cantidad;
             }
             return total;
+        }
+
+        private bool PuedeAgregarAlCarrito(Producto producto, List<ItemCarrito> carrito)
+        {
+            ItemCarrito item = carrito.Find(x => x.Producto.idProducto == producto.idProducto);
+
+            if (item == null)
+                return producto.stock > 0;
+
+            return item.Cantidad < item.StockTotal;
         }
     }
  }

@@ -40,7 +40,19 @@ namespace Ecomerce
 
             if (item != null)
             {
-                item.Cantidad++;
+                if(item.Cantidad < item.StockTotal)
+                {
+                    item.Cantidad++;
+                } else
+                {
+                    litError.Text = $"<strong>Error:</strong> no se puede agregar al carrito, no hay mas stock disponible.";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "MostrarToast",
+                    @"window.addEventListener('load', function () {
+                    const toastElement = document.getElementById('toastError');
+                    const toast = bootstrap.Toast.getOrCreateInstance(toastElement);
+                    toast.show();
+                    });", true);
+                }
             }
 
             RepProductos.DataSource = carrito;

@@ -370,6 +370,17 @@
             </div>
         </div>
 
+                <div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div id="toastError" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+        <div class="toast-body">
+            <asp:Literal ID="litError" runat="server"></asp:Literal>
+        </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+</div>
+
         <!-- ================= FOOTER ================= -->
         <footer class="py-5">
             <div class="container">
