@@ -326,5 +326,24 @@ namespace database
             }
         }
 
-    }
+        public bool bajarStockProductosVenta(List<ItemCarrito> productos)
+        {
+            cn = new Conexion();
+            try
+            {
+                foreach (ItemCarrito item in productos)
+                {
+                    string consulta = "update Productos set stock_Pd=stock_Pd-@cantidad where idProducto_Pd=@id";
+                    cn.setearConsulta(consulta);
+                    cn.setearParametros("@id", item.Producto.idProducto);
+                    cn.setearParametros("@cantidad", item.Cantidad);
+                    cn.ejecutarAccion();
+                }
+                return true;
+            }catch
+            {
+                return false; 
+            }
+        }
+}
 }

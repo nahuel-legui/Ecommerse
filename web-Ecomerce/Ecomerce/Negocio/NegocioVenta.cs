@@ -32,5 +32,12 @@ namespace Ecomerce.Negocio
             daoV= new daoVentas();
             return daoV.ObtenerVentasXCliente(dni);
         }
+
+        public bool GenerarVenta(int dni, List<ItemCarrito> productos)
+        {
+            daoV = new daoVentas();
+            return daoV.GenerarVenta(dni, productos);
+        }
+
     }
 }
