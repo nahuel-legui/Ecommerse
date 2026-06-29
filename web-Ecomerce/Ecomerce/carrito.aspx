@@ -363,7 +363,7 @@
                         </div>
                         
                         <!-- Botón Finalizar Venta -->
-                        <asp:Button ID="btnFinalizarVenta" runat="server" Text="Finalizar Compra" CssClass="btn-finalizar" />
+                        <asp:Button ID="btnFinalizarVenta" runat="server" Text="Finalizar Compra" CssClass="btn-finalizar" OnClick="btnFinalizarVenta_Click"/>
                     </div>
                 </div>
 
@@ -377,6 +377,45 @@
             <asp:Literal ID="litError" runat="server"></asp:Literal>
         </div>
             <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+</div>
+
+        <div class="modal fade" id="modalCompraExitosa" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+
+            <div class="modal-body text-center p-5">
+
+                <div class="mb-4">
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+                </div>
+
+                <h2 class="fw-bold mb-3">
+                    ¡Compra realizada con éxito!
+                </h2>
+
+                <p class="text-muted mb-4">
+                    Tu pedido fue registrado correctamente y ya se encuentra
+                    <strong>en proceso</strong>.
+                </p>
+
+                <div class="d-grid gap-2">
+                    <asp:Button ID="btnVerVenta"
+                        runat="server"
+                        Text="Ver mi compra"
+                        CssClass="btn btn-success btn-lg"
+                        OnClick="btnVerVenta_Click" />
+
+                    <button type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal">
+                        Seguir comprando
+                    </button>
+                </div>
+
+            </div>
+
         </div>
     </div>
 </div>

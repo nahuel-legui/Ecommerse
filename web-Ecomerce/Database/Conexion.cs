@@ -65,6 +65,7 @@ namespace database
 
         public void setearConsulta(string consulta)
         {
+            comando.Parameters.Clear();
             comando.CommandType = CommandType.Text;
             comando.CommandText = consulta;
 
@@ -109,6 +110,23 @@ namespace database
                 cerrarConexion();
             }
 
+        }
+
+        public int ejecutarScalar()
+        {
+            try
+            {
+                abrirConexion();
+                return Convert.ToInt32(comando.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al ejecutar la consulta: " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
         }
     }
 }

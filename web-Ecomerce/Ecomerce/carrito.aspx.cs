@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Ecomerce.Negocio;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,12 @@ namespace Ecomerce
 
         private void CargarCarrito()
         {
-            RepProductos.DataSource = Session["Carrito"] as List<ItemCarrito>;
+            var carrito = Session["Carrito"] as List<ItemCarrito>;
+
+            if (carrito == null)
+                carrito = new List<ItemCarrito>();
+
+            RepProductos.DataSource = carrito;
             RepProductos.DataBind();
         }
 
@@ -121,6 +127,50 @@ namespace Ecomerce
                 total += item.Cantidad;
             }
             return total;
+        }
+
+        public void btnFinalizarVenta_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = (Cliente)Session["Usuario"];
+            NegocioProducto negPr = new NegocioProducto();
+            NegocioVenta negVen = new NegocioVenta();
+            List<ItemCarrito> productos = (List<ItemCarrito>)Session["Carrito"];
+
+            try
+            {
+                if (!negVen.GenerarVenta(int.Parse(cliente.dni), productos)) throw new Exception("Error al generar la venta");
+                if (!negPr.bajarStockVenta(productos)) throw new Exception("Error al actualizar el stock");
+
+
+                Session["Carrito"] = new List<ItemCarrito>();
+                CargarCarrito();
+
+
+                // Mostrar modal de compra exitosa
+                ScriptManager.RegisterStartupScript(
+    this,
+    GetType(),
+    "CompraExitosa",
+    @"
+window.addEventListener('load', function () {
+    const modal = new bootstrap.Modal(document.getElementById('modalCompraExitosa'));
+    modal.show();
+});
+",
+    true);
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void btnVerVenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("misCompras.aspx");
         }
     }
 }
