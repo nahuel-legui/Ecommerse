@@ -105,7 +105,25 @@ namespace Ecomerce
         protected global::System.Web.UI.WebControls.Button btnFinalizarVenta;
 
         /// <summary>
-        /// Control lnkFootHome.
+        /// litError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litError;
+
+        /// <summary>
+        /// btnVerVenta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVerVenta;
+
+        /// <summary>
+        /// lnkFootHome control.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.

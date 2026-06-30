@@ -123,3 +123,22 @@ insert into DetalleVenta (idProducto_Pd_Dv, idVentas_Vn_Dv, cantidad_Dv, precioU
 (2, 5, 1, 59.50);  -- Venta 5: 1 Auricular
 go
 
+
+-- Trigger para inactiar el stock cuando llega a 0 o activarlo al agregar
+CREATE TRIGGER TR_ActualizarEstadoProducto
+ON Productos
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE P
+    SET activo_Pd =
+        CASE
+            WHEN I.stock_Pd <= 0 THEN 0
+            ELSE 1
+        END
+    FROM Productos P
+    INNER JOIN inserted I
+        ON P.idProducto_Pd = I.idProducto_Pd;
+END;

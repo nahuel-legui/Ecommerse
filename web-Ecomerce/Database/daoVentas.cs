@@ -115,7 +115,41 @@ namespace database
 
                 throw ex;
             }
+        }
+
+            public bool GenerarVenta(int dni, List<ItemCarrito> productos)
+        {
+            Conexion cn = new Conexion();
+            daoDetalleVentas cnDet = new daoDetalleVentas();
+
+            try {
+                decimal total = (decimal)productos.Sum(p => p.Producto.precioUnitario * p.Cantidad);
+                string consulta = "INSERT INTO Ventas (dni_Cl_Vn, total_Vn, fechaVenta_Vn) VALUES (@dni, @total, @fechaVenta_Vn) SELECT SCOPE_IDENTITY();";
+                cn.setearConsulta(consulta);
+                cn.setearParametros("@dni", dni);
+                cn.setearParametros("@total", total);
+                cn.setearParametros("@fechaVenta_Vn", DateTime.Now);
+                int idVenta = cn.ejecutarScalar();
+                
+                bool detalle = cnDet.GenerarDetalleVenta(idVenta, productos);
+                if(!detalle) throw new Exception("Error al generar el detalle de la venta");
+
+                // crear Seguimiento
+                consulta = "INSERT INTO seguimiento (idVenta_Vn_Sg, enCamino_Sg, entregado_Sg) VALUES (@idVenta,1,0);";
+                cn.setearConsulta(consulta);
+                cn.setearParametros("@idVenta", idVenta);
+                cn.ejecutarAccion();
+
+
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
+
     }
 }

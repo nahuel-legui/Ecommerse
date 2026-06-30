@@ -299,7 +299,7 @@
 
                         <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="~/carrito.aspx" CssClass="nav-icon" ToolTip="Carrito de compras">
                             <i class="bi bi-cart3"></i>
-                            <span class="cart-badge">3</span>
+                            <span class="cart-badge"><%= CantidadCarrito() %></span>
                         </asp:HyperLink>
                     </div>
                 </div>

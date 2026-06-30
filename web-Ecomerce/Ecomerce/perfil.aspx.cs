@@ -12,8 +12,25 @@ namespace Ecomerce
 {
     public partial class perfil : System.Web.UI.Page
     {
+
+        public int CantidadCarrito()
+        {
+
+            List<ItemCarrito> carrito = (List<ItemCarrito>)Session["Carrito"];
+
+            if (carrito == null) return 0;
+            int total = 0;
+
+            foreach (ItemCarrito item in carrito)
+            {
+                total += item.Cantidad;
+            }
+            return total;
+        }
+
         private void rellenarPerfil()
         {
+            //comentarios
             if (Session["Usuario"] != null)
             {
                 Cliente objCliente = new Cliente();

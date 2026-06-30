@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Ecomerce.Negocio;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,33 +13,28 @@ namespace Ecomerce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["Usuario"] == null)
             {
-
-                if (Session["Usuario"] == null)
-                {
-                    Response.Redirect("home.aspx");
-                }
-
-                if (Session["Usuario"] != null)
-                {
-                    Cliente objCliente = new Cliente();
-                    objCliente = (Cliente)Session["Usuario"];
-                    lblNombreAdmin.Text = objCliente.nombre + " " + objCliente.apellido;
-                }
-
+                Response.Redirect("home.aspx");
             }
 
-            List<ItemCarrito> carrito = (List<ItemCarrito>)Session["Carrito"];
-
-
-            if (carrito != null)
+            if (!Page.IsPostBack)
             {
-                RepProductos.DataSource = carrito;
-                RepProductos.DataBind();
+                CargarCarrito();
             }
         }
-        
+
+        private void CargarCarrito()
+        {
+            var carrito = Session["Carrito"] as List<ItemCarrito>;
+
+            if (carrito == null)
+                carrito = new List<ItemCarrito>();
+
+            RepProductos.DataSource = carrito;
+            RepProductos.DataBind();
+        }
+
 
         protected void btnMas_Click(object sender, EventArgs e)
         {
@@ -50,7 +46,19 @@ namespace Ecomerce
 
             if (item != null)
             {
-                item.Cantidad++;
+                if(item.Cantidad < item.StockTotal)
+                {
+                    item.Cantidad++;
+                } else
+                {
+                    litError.Text = $"<strong>Error:</strong> no se puede agregar al carrito, no hay mas stock disponible.";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "MostrarToast",
+                    @"window.addEventListener('load', function () {
+                    const toastElement = document.getElementById('toastError');
+                    const toast = bootstrap.Toast.getOrCreateInstance(toastElement);
+                    toast.show();
+                    });", true);
+                }
             }
 
             RepProductos.DataSource = carrito;
@@ -119,6 +127,50 @@ namespace Ecomerce
                 total += item.Cantidad;
             }
             return total;
+        }
+
+        public void btnFinalizarVenta_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = (Cliente)Session["Usuario"];
+            NegocioProducto negPr = new NegocioProducto();
+            NegocioVenta negVen = new NegocioVenta();
+            List<ItemCarrito> productos = (List<ItemCarrito>)Session["Carrito"];
+
+            try
+            {
+                if (!negVen.GenerarVenta(int.Parse(cliente.dni), productos)) throw new Exception("Error al generar la venta");
+                if (!negPr.bajarStockVenta(productos)) throw new Exception("Error al actualizar el stock");
+
+
+                Session["Carrito"] = new List<ItemCarrito>();
+                CargarCarrito();
+
+
+                // Mostrar modal de compra exitosa
+                ScriptManager.RegisterStartupScript(
+    this,
+    GetType(),
+    "CompraExitosa",
+    @"
+window.addEventListener('load', function () {
+    const modal = new bootstrap.Modal(document.getElementById('modalCompraExitosa'));
+    modal.show();
+});
+",
+    true);
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void btnVerVenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("misCompras.aspx");
         }
     }
 }

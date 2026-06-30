@@ -58,5 +58,11 @@ namespace Ecomerce.Negocio
             daoP= new daoProductos();
             return daoP.darAltaLogica(idProducto);
         }
+
+        public bool bajarStockVenta(List<ItemCarrito> productos)
+        {
+            daoP = new daoProductos();
+            return daoP.bajarStockProductosVenta(productos);
+        }
     }
 }
