@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sobre Nosotros - NL Shop</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
@@ -51,9 +51,9 @@
             transition: color 0.2s ease;
         }
 
-        .nav-link-custom:hover {
-            color: var(--color-principal) !important;
-        }
+            .nav-link-custom:hover {
+                color: var(--color-principal) !important;
+            }
 
         .nav-icon {
             font-size: 1.3rem;
@@ -62,9 +62,9 @@
             transition: color 0.2s ease;
         }
 
-        .nav-icon:hover {
-            color: var(--color-principal) !important;
-        }
+            .nav-icon:hover {
+                color: var(--color-principal) !important;
+            }
 
         .cart-badge {
             position: absolute;
@@ -87,11 +87,11 @@
             margin-bottom: 3rem;
         }
 
-        .about-header h1 {
-            font-weight: 800;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+            .about-header h1 {
+                font-weight: 800;
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
 
         .about-card {
             background: #ffffff;
@@ -110,15 +110,15 @@
             position: relative;
         }
 
-        .about-title-secondary::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background-color: var(--color-principal);
-            border-radius: 2px;
-            margin-top: 0.5rem;
-        }
+            .about-title-secondary::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 4px;
+                background-color: var(--color-principal);
+                border-radius: 2px;
+                margin-top: 0.5rem;
+            }
 
         .about-text {
             color: #4A5568;
@@ -134,6 +134,11 @@
             border-radius: 12px;
             transition: transform 0.2s ease;
             height: 100%;
+        }
+
+        .iconoAdmin {
+            font-size: 1.2rem;
+            color: black !important;
         }
 
         .value-box:hover {
@@ -161,25 +166,25 @@
             margin-top: auto;
         }
 
-        footer h5 {
-            color: #ffffff;
-            font-weight: 600;
-        }
+            footer h5 {
+                color: #ffffff;
+                font-weight: 600;
+            }
 
-        footer a {
-            color: #A0AEC0;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
+            footer a {
+                color: #A0AEC0;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
 
-        footer a:hover {
-            color: #ffffff;
-        }
+                footer a:hover {
+                    color: #ffffff;
+                }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
         <!-- ================= NAVBAR / HEADER ================= -->
         <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
             <div class="container">
@@ -205,10 +210,13 @@
                     </ul>
 
                     <div class="d-flex align-items-center gap-4">
+                  
+                        <asp:Label ID="lblNombreAdmin" runat="server" Text="" CssClass="text-white-50 small d-none d-sm-inline iconoAdmin ">
+                        </asp:Label>
                         <asp:HyperLink ID="lnkPerfil" runat="server" NavigateUrl="~/perfil.aspx" CssClass="nav-icon" ToolTip="Mi Perfil">
                             <i class="bi bi-person-circle"></i>
                         </asp:HyperLink>
-                        
+
                         <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="~/carrito.aspx" CssClass="nav-icon" ToolTip="Carrito de compras">
                             <i class="bi bi-cart3"></i>
                             <span class="cart-badge">3</span>
@@ -229,7 +237,7 @@
         <!-- ================= CONTENIDO DE HISTORIA ================= -->
         <div class="container mb-5">
             <div class="row g-4 align-items-stretch">
-                
+
                 <!-- Columna Izquierda: Historia -->
                 <div class="col-12 col-md-7">
                     <div class="about-card">
@@ -261,7 +269,7 @@
 
             <!-- ================= SECCIÓN VALORES ================= -->
             <h2 class="about-title-secondary text-center mt-5 mb-4 mx-auto" style="width: fit-content;">Nuestros Pilares</h2>
-            
+
             <div class="row g-4">
                 <!-- Valor 1 -->
                 <div class="col-12 col-md-4">
@@ -303,17 +311,20 @@
                     <div class="col-6 col-md-4 ps-md-5">
                         <h5>Enlaces Útiles</h5>
                         <ul class="list-unstyled mt-3 small">
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootHome" runat="server" NavigateUrl="~/home.aspx">Inicio</asp:HyperLink></li>
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootProd" runat="server" NavigateUrl="~/productos.aspx">Catálogo de Productos</asp:HyperLink></li>
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootAbout" runat="server" NavigateUrl="~/about.aspx">Quiénes Somos</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootHome" runat="server" NavigateUrl="~/home.aspx">Inicio</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootProd" runat="server" NavigateUrl="~/productos.aspx">Catálogo de Productos</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootAbout" runat="server" NavigateUrl="~/about.aspx">Quiénes Somos</asp:HyperLink></li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-4">
                         <h5>Contacto y Soporte</h5>
                         <ul class="list-unstyled mt-3 small text-white-50">
-                            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-white"></i> Av. de la Tienda 1234, CABA</li>
-                            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-white"></i> +54 11 4444-5555</li>
-                            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-white"></i> soporte@nlshop.com</li>
+                            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-white"></i>Av. de la Tienda 1234, CABA</li>
+                            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-white"></i>+54 11 4444-5555</li>
+                            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-white"></i>soporte@nlshop.com</li>
                         </ul>
                     </div>
                 </div>

@@ -46,8 +46,11 @@ namespace Ecomerce
                 lblNombrePerfil.Text = objCliente.nombre + " " + objCliente.apellido;
                 lblEmailPerfil.Text = objCliente.correoElectronico;
                 imgFotoPerfil.ImageUrl = objCliente.fotoPerfil;
-
+                objCliente = (Cliente)Session["Usuario"];
+                lblNombreAdmin.Text = objCliente.nombre + " " + objCliente.apellido;
+                
             }
+
         }
         private void actualizarSession()
         {
@@ -78,7 +81,7 @@ namespace Ecomerce
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Session.Remove("Usuario");
-            Response.Redirect("login.aspx");
+            Response.Redirect("home.aspx");
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,8 +14,14 @@ namespace Ecomerce
         {
             if (!IsPostBack)
             {
-                
-               
+
+                if (Session["Usuario"] != null)
+                {
+                    Cliente objCliente = new Cliente();
+                    objCliente = (Cliente)Session["Usuario"];
+                    lblNombreAdmin.Text = objCliente.nombre + " " + objCliente.apellido;
+                }
+
             }
         }
     }

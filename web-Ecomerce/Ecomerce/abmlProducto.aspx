@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ABML Productos - NL Shop</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
 
@@ -65,10 +65,10 @@
             text-decoration: none;
         }
 
-        .btn-volver-admin:hover {
-            background-color: #4A5568;
-            color: #ffffff;
-        }
+            .btn-volver-admin:hover {
+                background-color: #4A5568;
+                color: #ffffff;
+            }
 
         /* --- CONTENEDORES Y TARJETAS --- */
         .abml-card {
@@ -111,11 +111,11 @@
             transition: all 0.2s ease;
         }
 
-        .form-control-custom:focus {
-            outline: none;
-            border-color: var(--color-principal);
-            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
-        }
+            .form-control-custom:focus {
+                outline: none;
+                border-color: var(--color-principal);
+                box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+            }
 
         /* Botones de acción formulario */
         .btn-guardar {
@@ -129,10 +129,10 @@
             transition: background-color 0.2s ease;
         }
 
-        .btn-guardar:hover {
-            background-color: var(--color-principal-hover);
-            cursor: pointer;
-        }
+            .btn-guardar:hover {
+                background-color: var(--color-principal-hover);
+                cursor: pointer;
+            }
 
         .btn-cancelar {
             background-color: transparent;
@@ -146,11 +146,11 @@
             text-decoration: none;
         }
 
-        .btn-cancelar:hover {
-            background-color: #E2E8F0;
-            color: var(--color-texto);
-            cursor: pointer;
-        }
+            .btn-cancelar:hover {
+                background-color: #E2E8F0;
+                color: var(--color-texto);
+                cursor: pointer;
+            }
 
         /* Tablas de datos */
         .table-custom {
@@ -158,22 +158,22 @@
             vertical-align: middle;
         }
 
-        .table-custom thead {
-            background-color: #F8FAFC;
-            color: #4A5568;
-            font-weight: 700;
-        }
+            .table-custom thead {
+                background-color: #F8FAFC;
+                color: #4A5568;
+                font-weight: 700;
+            }
 
-        .table-custom th {
-            border-bottom: 2px solid #E2E8F0 !important;
-            padding: 1rem !important;
-        }
+            .table-custom th {
+                border-bottom: 2px solid #E2E8F0 !important;
+                padding: 1rem !important;
+            }
 
-        .table-custom td {
-            padding: 1rem !important;
-            color: #4A5568;
-            border-bottom: 1px solid #EDF2F7;
-        }
+            .table-custom td {
+                padding: 1rem !important;
+                color: #4A5568;
+                border-bottom: 1px solid #EDF2F7;
+            }
 
         /* Botones en filas */
         .btn-action-edit {
@@ -187,11 +187,11 @@
             text-decoration: none;
         }
 
-        .btn-action-edit:hover {
-            background-color: var(--color-principal);
-            color: white;
-            cursor: pointer;
-        }
+            .btn-action-edit:hover {
+                background-color: var(--color-principal);
+                color: white;
+                cursor: pointer;
+            }
 
         .btn-action-delete {
             background-color: rgba(229, 62, 98, 0.1);
@@ -204,11 +204,12 @@
             text-decoration: none;
         }
 
-        .btn-action-delete:hover {
-            background-color: #E53E3E;
-            color: white;
-            cursor: pointer;
-        }
+            .btn-action-delete:hover {
+                background-color: #E53E3E;
+                color: white;
+                cursor: pointer;
+            }
+
         .btn-action-activate {
             background-color: rgba(56, 161, 105, 0.1);
             color: #38A169;
@@ -220,11 +221,11 @@
             text-decoration: none;
         }
 
-        .btn-action-activate:hover {
-            background-color: #38A169;
-            color: white;
-            cursor: pointer;
-        }
+            .btn-action-activate:hover {
+                background-color: #38A169;
+                color: white;
+                cursor: pointer;
+            }
 
         /* --- FOOTER --- */
         footer {
@@ -236,7 +237,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
         <nav class="navbar navbar-expand-lg navbar-admin sticky-top">
             <div class="container">
                 <div class="d-flex align-items-center gap-2">
@@ -255,11 +256,11 @@
         </nav>
 
         <div class="container my-5">
-            
+
             <div class="abml-card">
-                <h2 class="abml-title"><i class="bi bi-box-seam-fill"></i> Inventario de Productos</h2>
+                <h2 class="abml-title"><i class="bi bi-box-seam-fill"></i>Inventario de Productos</h2>
                 <p class="text-muted small mb-4">Listado actual de productos en catálogo. Utilice las acciones de la derecha para modificar valores o dar de baja un producto.</p>
-                
+
                 <div class="table-responsive">
                     <table class="table table-custom table-hover mb-0">
                         <thead>
@@ -301,94 +302,144 @@
                     </table>
                 </div>
             </div>
-
-           <div class="abml-card">
-    <h2 class="abml-title"><i class="bi bi-pencil-fill"></i> Datos del Producto</h2>
-    <p class="text-muted small mb-4">Complete el formulario para dar de alta un nuevo artículo o modificar los datos del producto seleccionado arriba.</p>
-    
-    <%-- Guardamos el idProducto en un campo oculto cuando editamos --%>
-    <asp:HiddenField ID="hfProductoID" runat="server" />
-
-    <div class="row g-3">
-        <div class="col-md-6">
-            <asp:Label ID="lblNombre" runat="server" Text="Nombre del Producto" CssClass="form-label-custom"></asp:Label>
-            <asp:TextBox ID="txtNombreProducto" runat="server" CssClass="form-control-custom" placeholder="Ej. Gorra Trucker Urbana"></asp:TextBox>
-        </div>
-        <div class="col-md-3">
-            <asp:Label ID="lblPrecio" runat="server" Text="Precio Unitario ($)" CssClass="form-label-custom"></asp:Label>
-            <asp:TextBox ID="txtPrecioUnitario" runat="server" CssClass="form-control-custom" placeholder="0.00" type="number" step="0.01"></asp:TextBox>
-        </div>
-        <div class="col-md-3">
-            <asp:Label ID="lblIdProducto" runat="server" Text="" Enabled="True" Visible="False"></asp:Label>
-            <asp:Label ID="lblStock" runat="server" Text="Stock Inicial" CssClass="form-label-custom"></asp:Label>
-            <asp:TextBox ID="txtStock" runat="server" CssClass="form-control-custom" placeholder="0" type="number"></asp:TextBox>
-        </div>
         
-        <div class="col-12">
-            <asp:Label ID="lblCategoria" runat="server" Text="Categoría del Producto" CssClass="form-label-custom"></asp:Label>
-            <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-control-custom">
-                <asp:ListItem Value="0">-- Seleccione una Categoría --</asp:ListItem>
-            </asp:DropDownList>
+        <div class="abml-card">
+            <h2 class="abml-title"><i class="bi bi-pencil-fill"></i>Datos del Producto</h2>
+            <p class="text-muted small mb-4">Complete el formulario para dar de alta un nuevo artículo o modificar los datos del producto seleccionado arriba.</p>
+
+            <%-- Guardamos el idProducto en un campo oculto cuando editamos --%>
+            <asp:HiddenField ID="hfProductoID" runat="server" />
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <asp:Label ID="lblNombre" runat="server" Text="Nombre del Producto" CssClass="form-label-custom"></asp:Label>
+                    <asp:TextBox ID="txtNombreProducto" runat="server" CssClass="form-control-custom" placeholder="Ej. Gorra Trucker Urbana" MaxLength="30"></asp:TextBox>
+                </div>
+                <div class="col-md-3">
+                    <asp:Label ID="lblPrecio" runat="server" Text="Precio Unitario ($)" CssClass="form-label-custom"></asp:Label>
+                    <asp:TextBox ID="txtPrecioUnitario" runat="server" CssClass="form-control-custom" placeholder="0.00" type="number" step="0.01"></asp:TextBox>
+                </div>
+                <div class="col-md-3">
+                    <asp:Label ID="lblIdProducto" runat="server" Text="" Enabled="True" Visible="False"></asp:Label>
+                    <asp:Label ID="lblStock" runat="server" Text="Stock Inicial" CssClass="form-label-custom"></asp:Label>
+                    <asp:TextBox ID="txtStock" runat="server" CssClass="form-control-custom" placeholder="0" type="number"></asp:TextBox>
+                </div>
+
+                <div class="col-12">
+                    <asp:Label ID="lblCategoria" runat="server" Text="Categoría del Producto" CssClass="form-label-custom"></asp:Label>
+                    <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-control-custom">
+                        <asp:ListItem Value="0">-- Seleccione una Categoría --</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+
+                <div class="col-12">
+                    <asp:Label ID="lblImagenUrl" runat="server" Text="URL de la Imagen del Producto" CssClass="form-label-custom"></asp:Label>
+                    <asp:TextBox ID="txtImagenUrl" runat="server" CssClass="form-control-custom" placeholder="https://ejemplo.com/imagenes/producto.jpg" MaxLength="500"></asp:TextBox>
+                </div>
+                <div class="col-12">
+                    <asp:Label ID="lblDescripcion" runat="server" Text="Descripción del Producto" CssClass="form-label-custom"></asp:Label>
+                    <asp:TextBox ID="txtDescripcion" runat="server" TextMode="MultiLine" Rows="3" CssClass="form-control-custom" placeholder="Escriba aquí los detalles y especificaciones del producto..." MaxLength="300"></asp:TextBox>
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex gap-2 justify-content-end">
+                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar / Limpiar" CssClass="btn-cancelar" OnClick="btnCancelar_Click" />
+
+                <button type="button" class="btn-guardar" data-bs-toggle="modal" data-bs-target="#modalConfirmar">
+                    Guardar Producto
+                </button>
+            </div>
+            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
         </div>
 
-        <div class="col-12">
-            <asp:Label ID="lblImagenUrl" runat="server" Text="URL de la Imagen del Producto" CssClass="form-label-custom"></asp:Label>
-            <asp:TextBox ID="txtImagenUrl" runat="server" CssClass="form-control-custom" placeholder="https://ejemplo.com/imagenes/producto.jpg"></asp:TextBox>
-        </div>
-        <div class="col-12">
-            <asp:Label ID="lblDescripcion" runat="server" Text="Descripción del Producto" CssClass="form-label-custom"></asp:Label>
-            <asp:TextBox ID="txtDescripcion" runat="server" TextMode="MultiLine" Rows="3" CssClass="form-control-custom" placeholder="Escriba aquí los detalles y especificaciones del producto..."></asp:TextBox>
-        </div>
-    </div>
 
-    <div class="mt-4 d-flex gap-2 justify-content-end">
-        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar / Limpiar" CssClass="btn-cancelar" OnClick="btnCancelar_Click"/>
-        <asp:Button ID="btnGuardar" runat="server" Text="Agregar Producto" CssClass="btn-guardar" OnClick="btnGuardar_Click" />
-    </div>
-    <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
-</div>
-            <div class="abml-card">
-    <h2 class="abml-title"><i class="bi bi-box-seam-fill"></i> Inventario de Productos Dados de Baja</h2>
-    <p class="text-muted small mb-4">Listado actual de productos en catálogo dado de baja . Utilice la accion de la derecha para dar de alta un producto .</p>
-    
-    <div class="table-responsive">
-        <table class="table table-custom table-hover mb-0">
-            <thead>
-                <tr>
-                    <th style="width: 100px;">ID</th>
-                    <th>Producto</th>
-                    <th>Descripción</th>
-                    <th style="width: 150px;">Precio Unitario</th>
-                    <th style="width: 120px;">Stock</th>
-                    <th class="text-center" style="width: 140px;">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <asp:Repeater ID="rpProductoBaja" runat="server">
-                    <ItemTemplate>
+        <div class="abml-card">
+            <h2 class="abml-title"><i class="bi bi-pencil-fill"></i>Categorias</h2>
+            <p class="text-muted small mb-4">Complete el formulario para dar de alta una nueva categoria.</p>
+
+
+
+            <div class="row g-2">
+
+                <div class="col-12">
+                    <asp:Label ID="Label6" runat="server" Text="Nombre Categoria" CssClass="form-label-custom"></asp:Label>
+                    <asp:TextBox ID="txtCategoria" runat="server" CssClass="form-control-custom" placeholder="Ej: Calzado" MaxLength="50"></asp:TextBox>
+
+                </div>
+
+            </div>
+
+            <div class="mt-4 d-flex gap-2 justify-content-end">
+
+                <asp:Button ID="btnCategoria" runat="server" Text="Confirmar" CssClass="btn-guardar" OnClick="btnCategoria_Click" />
+
+            </div>
+            <asp:Label ID="lblCat" runat="server" Text=""></asp:Label>
+        </div>
+
+
+        <div class="abml-card">
+            <h2 class="abml-title"><i class="bi bi-box-seam-fill"></i>Inventario de Productos Dados de Baja</h2>
+            <p class="text-muted small mb-4">Listado actual de productos en catálogo dado de baja . Utilice la accion de la derecha para dar de alta un producto .</p>
+
+            <div class="table-responsive">
+                <table class="table table-custom table-hover mb-0">
+                    <thead>
                         <tr>
-                            <td class="fw-bold"><%# Eval("idProducto") %></td>
-                            <td><%# Eval("nombreProducto") %></td>
-                            <td class="text-muted"><%# Eval("descripcion") %></td>
-                            <td class="fw-semibold">$ <%# Eval("precioUnitario", "{0:N2}") %></td>
-                            <td>
-                                <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1"><%# Eval("stock") %> unidades</span>
-                            </td>
-                            <td class="text-center">
-                                <div class="d-flex justify-content-center gap-2">
-                                   <asp:LinkButton ID="btnAltaRow" runat="server" CssClass="btn-action-activate" ToolTip="Dar de Alta / Reactivar Producto" CommandName="Alta" CommandArgument='<%# Eval("idProducto") %>' OnClick="btnAltaRow_Click">
-                                        <i class="bi bi-check-circle-fill"></i>
-                                   </asp:LinkButton>
-                                </div>
-                            </td>
+                            <th style="width: 100px;">ID</th>
+                            <th>Producto</th>
+                            <th>Descripción</th>
+                            <th style="width: 150px;">Precio Unitario</th>
+                            <th style="width: 120px;">Stock</th>
+                            <th class="text-center" style="width: 140px;">Acciones</th>
                         </tr>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </tbody>
-            <asp:Label ID="lblMensajeBaja" runat="server" Text=""></asp:Label>
-        </table>
-    </div>
-</div>
+                    </thead>
+                    <tbody>
+                        <asp:Repeater ID="rpProductoBaja" runat="server">
+                            <ItemTemplate>
+                                <tr>
+                                    <td class="fw-bold"><%# Eval("idProducto") %></td>
+                                    <td><%# Eval("nombreProducto") %></td>
+                                    <td class="text-muted"><%# Eval("descripcion") %></td>
+                                    <td class="fw-semibold">$ <%# Eval("precioUnitario", "{0:N2}") %></td>
+                                    <td>
+                                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1"><%# Eval("stock") %> unidades</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <asp:LinkButton ID="btnAltaRow" runat="server" CssClass="btn-action-activate" ToolTip="Dar de Alta / Reactivar Producto" CommandName="Alta" CommandArgument='<%# Eval("idProducto") %>' OnClick="btnAltaRow_Click">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                            </asp:LinkButton>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </tbody>
+                    <asp:Label ID="lblMensajeBaja" runat="server" Text=""></asp:Label>
+                </table>
+            </div>
+        </div>
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalConfirmar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Desea confirmar la accion ? </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <asp:Button ID="btnGuardar" runat="server" Text="Confirmar" CssClass="btn-guardar" OnClick="btnGuardar_Click" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <footer class="py-4 mt-auto">
@@ -397,7 +448,6 @@
                 <p class="mb-0 text-white-50 mt-2 mt-md-0">Módulo: Productos</p>
             </div>
         </footer>
-
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

@@ -28,11 +28,7 @@ namespace Ecomerce.Negocio
             return daoP.modificarProducto(producto);
 
         }
-        public List<Categoria> obtenerTodasCategorias()
-        {
-            daoP= new daoProductos();
-            return daoP.obtenerTodasCategorias();
-        }
+        
 
         public List<Producto> obtenerProductosXCategoria(int idCategoria)
         {

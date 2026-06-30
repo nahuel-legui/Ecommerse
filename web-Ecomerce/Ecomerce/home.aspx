@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Mi E-commerce</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
 
@@ -49,9 +49,9 @@
             transition: color 0.2s ease;
         }
 
-        .nav-link-custom:hover {
-            color: var(--color-principal) !important;
-        }
+            .nav-link-custom:hover {
+                color: var(--color-principal) !important;
+            }
 
         /* Iconos de Perfil y Carrito */
         .nav-icon {
@@ -61,11 +61,11 @@
             transition: color 0.2s ease;
         }
 
-        .nav-icon:hover {
-            color: var(--color-principal) !important;
-        }
+            .nav-icon:hover {
+                color: var(--color-principal) !important;
+            }
 
-        
+
         .cart-badge {
             position: absolute;
             top: -5px;
@@ -77,10 +77,10 @@
             border-radius: 50%;
         }
 
-   
+
         .carousel-item img {
             height: 450px;
-            object-fit: cover; 
+            object-fit: cover;
         }
 
         .carousel-caption-custom {
@@ -90,7 +90,7 @@
             backdrop-filter: blur(4px);
         }
 
-        
+
         .section-title {
             font-weight: 700;
             color: var(--color-texto);
@@ -107,10 +107,10 @@
             height: 100%;
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        }
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            }
 
         .product-img-wrapper {
             height: 220px;
@@ -143,7 +143,12 @@
             color: var(--color-principal);
         }
 
- 
+        .iconoAdmin {
+            font-size: 1.2rem;
+            color: black !important;
+        }
+
+
         .btn-ver-mas {
             border: 2px solid var(--color-principal);
             color: var(--color-principal);
@@ -153,40 +158,40 @@
             text-decoration: none;
             transition: all 0.2s ease;
             display: inline-block;
-            margin-bottom:4rem;
+            margin-bottom: 4rem;
         }
 
-        .btn-ver-mas:hover {
-            background-color: var(--color-principal);
-            color: white;
-        }
+            .btn-ver-mas:hover {
+                background-color: var(--color-principal);
+                color: white;
+            }
 
-        
+
         footer {
             background-color: #1A202C;
             color: #A0AEC0;
-            margin-top: auto; 
+            margin-top: auto;
         }
 
-        footer h5 {
-            color: #ffffff;
-            font-weight: 600;
-        }
+            footer h5 {
+                color: #ffffff;
+                font-weight: 600;
+            }
 
-        footer a {
-            color: #A0AEC0;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
+            footer a {
+                color: #A0AEC0;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
 
-        footer a:hover {
-            color: #ffffff;
-        }
+                footer a:hover {
+                    color: #ffffff;
+                }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
         <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
             <div class="container">
                 <asp:HyperLink ID="lnkLogo" runat="server" NavigateUrl="~/home.aspx" CssClass="navbar-brand navbar-brand-custom">
@@ -211,10 +216,13 @@
                     </ul>
 
                     <div class="d-flex align-items-center gap-4">
+                        
+                        <asp:Label ID="lblNombreAdmin" runat="server" Text="" CssClass="text-white-50 small d-none d-sm-inline iconoAdmin ">
+                        </asp:Label>
                         <asp:HyperLink ID="lnkPerfil" runat="server" NavigateUrl="~/perfil.aspx" CssClass="nav-icon" ToolTip="Mi Perfil">
                             <i class="bi bi-person-circle"></i>
                         </asp:HyperLink>
-                        
+
                         <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="~/carrito.aspx" CssClass="nav-icon" ToolTip="Carrito de compras">
                             <i class="bi bi-cart3"></i>
                             <span class="cart-badge"><%= CantidadCarrito() %></span> </asp:HyperLink>
@@ -259,45 +267,44 @@
         </div>
 
         <div class="container my-5">
-    <h2 class="text-center section-title">Productos Destacados</h2>
+            <h2 class="text-center section-title">Productos Destacados</h2>
 
-    <div class="row g-4">
+            <div class="row g-4">
 
-        <%
-        int contador = 0;
+                <%
+                    int contador = 0;
 
-        foreach (Models.Producto item in productosList)
-        {
-            if (contador >= 4)
-                break;
-        %>
+                    foreach (Models.Producto item in productosList)
+                    {
+                        if (contador >= 4)
+                            break;
+                %>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="<%: item.ImagenUrl %>" class="product-img" alt="<%: item.nombreProducto %>" />
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <img src="<%: item.ImagenUrl %>" class="product-img" alt="<%: item.nombreProducto %>" />
+                        </div>
+
+                        <div class="p-3">
+                            <h3 class="product-title"><%: item.nombreProducto %></h3>
+                            <p class="product-price">$<%: item.precioUnitario %></p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="p-3">
-                    <h3 class="product-title"><%: item.nombreProducto %></h3>
-                    <p class="product-price">$<%: item.precioUnitario %></p>
-                </div>
+                <%
+                        contador++;
+                    }
+                %>
             </div>
         </div>
 
-        <%
-            contador++;
-        }
-        %>
-
-    </div>
-</div>
-
-            <div class="text-center mt-5">
-                <asp:HyperLink ID="lnkVerMas" runat="server" NavigateUrl="~/productos.aspx" CssClass="btn-ver-mas">
+        <div class="text-center mt-5">
+            <asp:HyperLink ID="lnkVerMas" runat="server" NavigateUrl="~/productos.aspx" CssClass="btn-ver-mas">
                     Ver más productos <i class="bi bi-arrow-right ms-1"></i>
-                </asp:HyperLink>
-            </div>
+            </asp:HyperLink>
+        </div>
 
         <footer class="py-5">
             <div class="container">
@@ -309,17 +316,20 @@
                     <div class="col-6 col-md-4 ps-md-5">
                         <h5>Enlaces Útiles</h5>
                         <ul class="list-unstyled mt-3 small">
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootHome" runat="server" NavigateUrl="~/home.aspx">Inicio</asp:HyperLink></li>
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootProd" runat="server" NavigateUrl="~/productos.aspx">Catálogo de Productos</asp:HyperLink></li>
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootAbout" runat="server" NavigateUrl="~/about.aspx">Quiénes Somos</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootHome" runat="server" NavigateUrl="~/home.aspx">Inicio</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootProd" runat="server" NavigateUrl="~/productos.aspx">Catálogo de Productos</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootAbout" runat="server" NavigateUrl="~/about.aspx">Quiénes Somos</asp:HyperLink></li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-4">
                         <h5>Contacto y Soporte</h5>
                         <ul class="list-unstyled mt-3 small text-white-50">
-                            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-white"></i> Av. de la Tienda 1234, CABA</li>
-                            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-white"></i> +54 11 4444-5555</li>
-                            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-white"></i> soporte@ecommerce.com</li>
+                            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-white"></i>Av. de la Tienda 1234, CABA</li>
+                            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-white"></i>+54 11 4444-5555</li>
+                            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-white"></i>soporte@ecommerce.com</li>
                         </ul>
                     </div>
                 </div>

@@ -60,7 +60,16 @@ namespace Ecomerce
         protected global::System.Web.UI.WebControls.HyperLink lnkAbout;
 
         /// <summary>
-        /// lnkPerfil control.
+        /// Control lblNombreAdmin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombreAdmin;
+
+        /// <summary>
+        /// Control lnkPerfil.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
