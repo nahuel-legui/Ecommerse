@@ -14,6 +14,7 @@ namespace Ecomerce
         public List<Producto> productosList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            // comentar
             if (!IsPostBack)
             { 
                 NegocioProducto negPr = new NegocioProducto();
