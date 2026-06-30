@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Perfil - NL Shop</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
@@ -44,6 +44,11 @@
             font-size: 1.4rem;
         }
 
+        .iconoAdmin {
+            font-size: 1.2rem;
+            color: black !important;
+        }
+
         .nav-link-custom {
             color: #4A5568 !important;
             font-weight: 500;
@@ -51,9 +56,9 @@
             transition: color 0.2s ease;
         }
 
-        .nav-link-custom:hover {
-            color: var(--color-principal) !important;
-        }
+            .nav-link-custom:hover {
+                color: var(--color-principal) !important;
+            }
 
         .nav-icon {
             font-size: 1.3rem;
@@ -62,9 +67,9 @@
             transition: color 0.2s ease;
         }
 
-        .nav-icon:hover {
-            color: var(--color-principal) !important;
-        }
+            .nav-icon:hover {
+                color: var(--color-principal) !important;
+            }
 
         .cart-badge {
             position: absolute;
@@ -134,15 +139,15 @@
             margin-bottom: 1.25rem;
         }
 
-        .input-group-custom i {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #A0AEC0;
-            font-size: 1rem;
-            z-index: 10;
-        }
+            .input-group-custom i {
+                position: absolute;
+                left: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #A0AEC0;
+                font-size: 1rem;
+                z-index: 10;
+            }
 
         .form-control-custom {
             width: 100%;
@@ -155,12 +160,12 @@
             transition: all 0.2s ease;
         }
 
-        .form-control-custom:focus {
-            outline: none;
-            border-color: var(--color-principal);
-            background-color: #FFF;
-            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
-        }
+            .form-control-custom:focus {
+                outline: none;
+                border-color: var(--color-principal);
+                background-color: #FFF;
+                box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+            }
 
         .section-header-profile {
             font-size: 0.8rem;
@@ -186,10 +191,10 @@
             transition: background-color 0.2s ease;
         }
 
-        .btn-principal:hover {
-            background-color: var(--color-principal-hover);
-            cursor: pointer;
-        }
+            .btn-principal:hover {
+                background-color: var(--color-principal-hover);
+                cursor: pointer;
+            }
 
         .btn-logout {
             background-color: transparent;
@@ -203,36 +208,36 @@
             transition: all 0.2s ease;
         }
 
-        .btn-logout:hover {
-            background-color: #E53E3E;
-            color: #ffffff;
-            cursor: pointer;
-        }
+            .btn-logout:hover {
+                background-color: #E53E3E;
+                color: #ffffff;
+                cursor: pointer;
+            }
         /* Botón de navegación: Ver mis compras */
-    .btn-mis-compras-custom {
-        background-color: rgba(43, 108, 176, 0.1); /* Fondo azul traslúcido muy suave */
-        color: var(--color-principal); /* Azul corporativo #2B6CB0 */
-        border: 1px solid rgba(43, 108, 176, 0.2);
-        padding: 0.5rem 1.2rem;
-        border-radius: 8px; /* Mismo radio de curvatura de la marca */
-        font-size: 0.9rem;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem; /* Espaciado perfecto entre el icono de la bolsa y el texto */
-        transition: all 0.2s ease;
-        margin-bottom:3rem;
-    }
+        .btn-mis-compras-custom {
+            background-color: rgba(43, 108, 176, 0.1); /* Fondo azul traslúcido muy suave */
+            color: var(--color-principal); /* Azul corporativo #2B6CB0 */
+            border: 1px solid rgba(43, 108, 176, 0.2);
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px; /* Mismo radio de curvatura de la marca */
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem; /* Espaciado perfecto entre el icono de la bolsa y el texto */
+            transition: all 0.2s ease;
+            margin-bottom: 3rem;
+        }
 
-    /* Efecto al pasar el mouse (Hover) */
-    .btn-mis-compras-custom:hover {
-        background-color: var(--color-principal); /* Cambia a azul pleno */
-        color: #ffffff !important; /* Texto blanco */
-        border-color: var(--color-principal);
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(43, 108, 176, 0.15); /* Sombra suave de enfoque */
-    }
+            /* Efecto al pasar el mouse (Hover) */
+            .btn-mis-compras-custom:hover {
+                background-color: var(--color-principal); /* Cambia a azul pleno */
+                color: #ffffff !important; /* Texto blanco */
+                border-color: var(--color-principal);
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(43, 108, 176, 0.15); /* Sombra suave de enfoque */
+            }
 
         /* --- FOOTER --- */
         footer {
@@ -241,25 +246,25 @@
             margin-top: auto;
         }
 
-        footer h5 {
-            color: #ffffff;
-            font-weight: 600;
-        }
+            footer h5 {
+                color: #ffffff;
+                font-weight: 600;
+            }
 
-        footer a {
-            color: #A0AEC0;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
+            footer a {
+                color: #A0AEC0;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
 
-        footer a:hover {
-            color: #ffffff;
-        }
+                footer a:hover {
+                    color: #ffffff;
+                }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
         <!-- ================= NAVBAR / HEADER ================= -->
         <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
             <div class="container">
@@ -285,10 +290,13 @@
                     </ul>
 
                     <div class="d-flex align-items-center gap-4">
+                        
+                        <asp:Label ID="lblNombreAdmin" runat="server" Text="" CssClass="text-white-50 small d-none d-sm-inline iconoAdmin ">
+                        </asp:Label>
                         <asp:HyperLink ID="lnkPerfil" runat="server" NavigateUrl="~/perfil.aspx" CssClass="nav-icon fw-bold text-primary" ToolTip="Mi Perfil">
                             <i class="bi bi-person-circle"></i>
                         </asp:HyperLink>
-                        
+
                         <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="~/carrito.aspx" CssClass="nav-icon" ToolTip="Carrito de compras">
                             <i class="bi bi-cart3"></i>
                             <span class="cart-badge">3</span>
@@ -301,7 +309,7 @@
         <!-- ================= CONTENIDO PRINCIPAL ================= -->
         <div class="container my-5">
             <div class="row g-4">
-                
+
                 <!-- COLUMNA IZQUIERDA: RESUMEN DE PERFIL -->
                 <div class="col-12 col-lg-4">
                     <div class="profile-card text-center">
@@ -309,11 +317,11 @@
                             <!-- Se utiliza un placeholder de imagen de prueba usando Picsum -->
                             <asp:Image ID="imgFotoPerfil" runat="server" ImageUrl="https://picsum.photos/150/150?random=45" CssClass="profile-avatar" AlternativeText="Foto de perfil" />
                         </div>
-                        
+
                         <!-- Nombre del usuario de muestra -->
                         <asp:Label ID="lblNombrePerfil" runat="server" Text="" CssClass="profile-name"></asp:Label>
                         <asp:Label ID="lblEmailPerfil" runat="server" Text="" CssClass="profile-email-sub" DisplayMode="Paragraph"></asp:Label>
-                        
+
                         <hr class="my-4 border-light-subtle" />
                         <asp:HyperLink ID="lnkMisCompras" runat="server" NavigateUrl="~/misCompras.aspx" CssClass="btn-mis-compras-custom">
                          <i class="bi bi-bag-check-fill"></i> Ver mis compras
@@ -326,10 +334,10 @@
                 <!-- COLUMNA DERECHA: DETALLE DE LOS DATOS -->
                 <div class="col-12 col-lg-8">
                     <div class="profile-card">
-                        
+
                         <div class="row">
                             <div class="col-12 section-header-profile">Información de Cuenta y Personal</div>
-                            
+
                             <!-- Campo Nombre -->
                             <div class="col-md-6">
                                 <asp:Label ID="lblNombre" runat="server" Text="Nombre" CssClass="form-label-custom"></asp:Label>
@@ -428,17 +436,20 @@
                     <div class="col-6 col-md-4 ps-md-5">
                         <h5>Enlaces Útiles</h5>
                         <ul class="list-unstyled mt-3 small">
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootHome" runat="server" NavigateUrl="~/home.aspx">Inicio</asp:HyperLink></li>
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootProd" runat="server" NavigateUrl="~/productos.aspx">Catálogo de Productos</asp:HyperLink></li>
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootAbout" runat="server" NavigateUrl="~/about.aspx">Quiénes Somos</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootHome" runat="server" NavigateUrl="~/home.aspx">Inicio</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootProd" runat="server" NavigateUrl="~/productos.aspx">Catálogo de Productos</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootAbout" runat="server" NavigateUrl="~/about.aspx">Quiénes Somos</asp:HyperLink></li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-4">
                         <h5>Contacto y Soporte</h5>
                         <ul class="list-unstyled mt-3 small text-white-50">
-                            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-white"></i> Av. de la Tienda 1234, CABA</li>
-                            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-white"></i> +54 11 4444-5555</li>
-                            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-white"></i> soporte@nlshop.com</li>
+                            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-white"></i>Av. de la Tienda 1234, CABA</li>
+                            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-white"></i>+54 11 4444-5555</li>
+                            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-white"></i>soporte@nlshop.com</li>
                         </ul>
                     </div>
                 </div>

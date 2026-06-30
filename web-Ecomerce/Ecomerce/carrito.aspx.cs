@@ -19,7 +19,14 @@ namespace Ecomerce
                 {
                     Response.Redirect("home.aspx");
                 }
-              
+
+                if (Session["Usuario"] != null)
+                {
+                    Cliente objCliente = new Cliente();
+                    objCliente = (Cliente)Session["Usuario"];
+                    lblNombreAdmin.Text = objCliente.nombre + " " + objCliente.apellido;
+                }
+
             }
 
             List<ItemCarrito> carrito = (List<ItemCarrito>)Session["Carrito"];

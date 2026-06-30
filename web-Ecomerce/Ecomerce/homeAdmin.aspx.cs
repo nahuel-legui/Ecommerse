@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,11 +16,20 @@ namespace Ecomerce
 
                 if (Session["UsuarioAdmin"]==null)
                 {
-                    Response.Redirect("home.aspx");
 
+                    Response.Redirect("home.aspx");
+                    
                 }
+                admin obj = (admin)Session["UsuarioAdmin"];
+                lblNombreAdmin.Text = obj.nombre + " " + obj.apellido;
             }
 
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Session.Remove("UsuarioAdmin");
+            Response.Redirect("home.aspx");
         }
     }
 }

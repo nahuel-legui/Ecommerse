@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi Carrito - NL Shop</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
@@ -31,6 +31,11 @@
             min-height: 100vh;
         }
 
+        .iconoAdmin {
+            font-size: 1.2rem;
+            color: black !important;
+        }
+
         /* --- HEADER / NAVBAR --- */
         .navbar-custom {
             background-color: #ffffff;
@@ -51,9 +56,9 @@
             transition: color 0.2s ease;
         }
 
-        .nav-link-custom:hover {
-            color: var(--color-principal) !important;
-        }
+            .nav-link-custom:hover {
+                color: var(--color-principal) !important;
+            }
 
         .nav-icon {
             font-size: 1.3rem;
@@ -62,9 +67,9 @@
             transition: color 0.2s ease;
         }
 
-        .nav-icon:hover {
-            color: var(--color-principal) !important;
-        }
+            .nav-icon:hover {
+                color: var(--color-principal) !important;
+            }
 
         .cart-badge {
             position: absolute;
@@ -94,9 +99,9 @@
             border-bottom: 1px solid #EDF2F7;
         }
 
-        .cart-item:last-child {
-            border-bottom: none;
-        }
+            .cart-item:last-child {
+                border-bottom: none;
+            }
 
         .cart-item-img-wrapper {
             width: 80px;
@@ -159,12 +164,12 @@
             transition: all 0.2s ease;
         }
 
-        .btn-qty:hover {
-            background-color: var(--color-principal);
-            color: #ffffff;
-            border-color: var(--color-principal);
-            cursor: pointer;
-        }
+            .btn-qty:hover {
+                background-color: var(--color-principal);
+                color: #ffffff;
+                border-color: var(--color-principal);
+                cursor: pointer;
+            }
 
         .qty-number {
             width: 35px;
@@ -184,10 +189,10 @@
             margin-left: 1rem;
         }
 
-        .btn-delete-item:hover {
-            color: #E53E3E;
-            cursor: pointer;
-        }
+            .btn-delete-item:hover {
+                color: #E53E3E;
+                cursor: pointer;
+            }
 
         /* Resumen de Totales Lateral */
         .summary-title {
@@ -233,11 +238,11 @@
             text-decoration: none;
         }
 
-        .btn-finalizar:hover {
-            background-color: var(--color-principal-hover);
-            color: #ffffff;
-            cursor: pointer;
-        }
+            .btn-finalizar:hover {
+                background-color: var(--color-principal-hover);
+                color: #ffffff;
+                cursor: pointer;
+            }
 
         /* --- FOOTER --- */
         footer {
@@ -246,25 +251,25 @@
             margin-top: auto;
         }
 
-        footer h5 {
-            color: #ffffff;
-            font-weight: 600;
-        }
+            footer h5 {
+                color: #ffffff;
+                font-weight: 600;
+            }
 
-        footer a {
-            color: #A0AEC0;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
+            footer a {
+                color: #A0AEC0;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
 
-        footer a:hover {
-            color: #ffffff;
-        }
+                footer a:hover {
+                    color: #ffffff;
+                }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
         <!-- ================= NAVBAR / HEADER ================= -->
         <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
             <div class="container">
@@ -290,10 +295,13 @@
                     </ul>
 
                     <div class="d-flex align-items-center gap-4">
+                        
+                        <asp:Label ID="lblNombreAdmin" runat="server" Text="" CssClass="text-white-50 small d-none d-sm-inline iconoAdmin ">
+                        </asp:Label>
                         <asp:HyperLink ID="lnkPerfil" runat="server" NavigateUrl="~/perfil.aspx" CssClass="nav-icon" ToolTip="Mi Perfil">
                             <i class="bi bi-person-circle"></i>
                         </asp:HyperLink>
-                        
+
                         <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="~/carrito.aspx" CssClass="nav-icon fw-bold text-primary" ToolTip="Carrito de compras">
                             <i class="bi bi-cart3"></i>
                             <span class="cart-badge"><%= CantidadCarrito() %></span> 
@@ -306,13 +314,13 @@
         <!-- ================= CONTENIDO DEL CARRITO ================= -->
         <div class="container my-5">
             <h1 class="fw-bold mb-4" style="font-size: 1.75rem;"><i class="bi bi-cart3 me-2"></i>Tu Carrito de Compra</h1>
-            
+
             <div class="row g-4">
-                
+
                 <!-- COLUMNA IZQUIERDA: LISTA DE PRODUCTOS AGREGADOS -->
                 <div class="col-12 col-lg-8">
                     <div class="cart-card">
-                        
+
                         <!-- Producto Ejemplo 1 -->
                         <asp:Repeater ID="RepProductos" runat="server">
                             <ItemTemplate>
@@ -320,26 +328,24 @@
                                     <div class="cart-item-img-wrapper">
                                         <img src="<%# Eval("Producto.ImagenUrl") %>" class="cart-item-img" alt="Producto" />
                                     </div>
-                                <div class="cart-item-details">
-                                    <h3 class="cart-item-title"><%# Eval("Producto.nombreProducto") %></h3>
-                                    <p class="cart-item-price"><%# Eval("Producto.precioUnitario", "${0:F2}") %></p>
+                                    <div class="cart-item-details">
+                                        <h3 class="cart-item-title"><%# Eval("Producto.nombreProducto") %></h3>
+                                        <p class="cart-item-price"><%# Eval("Producto.precioUnitario", "${0:F2}") %></p>
+                                    </div>
+                                    <!-- Control de cantidad maqueta -->
+                                    <div class="quantity-control">
+                                        <asp:Button ID="btnMenos" runat="server" Text="-" CssClass="btn-qty" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnMenos_Click" />
+                                        <span class="qty-number"><%# Eval("Cantidad") %></span>
+                                        <asp:Button ID="btnMas" runat="server" Text="+" CssClass="btn-qty" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnMas_Click" />
+                                    </div>
+                                    <!-- Botón eliminar maqueta -->
+                                    <asp:Button type="button" runat="server" class="btn-delete-item" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnEliminar_Click" Text="🗑"></asp:Button>
                                 </div>
-                            <!-- Control de cantidad maqueta -->
-                                <div class="quantity-control">
-                                    <asp:Button ID="btnMenos" runat="server" Text="-" CssClass="btn-qty" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnMenos_Click" />
-                                    <span class="qty-number"><%# Eval("Cantidad") %></span>
-                                    <asp:Button ID="btnMas" runat="server" Text="+" CssClass="btn-qty" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnMas_Click" />
-                                </div>
-                            <!-- Botón eliminar maqueta -->
-                                <asp:Button type="button" runat="server" class="btn-delete-item" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnEliminar_Click" Text="🗑">
-                                
-                                </asp:Button>
-                            </div>
                             </ItemTemplate>
                         </asp:Repeater>
-                        
 
-                        
+
+
 
                     </div>
                 </div>
@@ -348,7 +354,7 @@
                 <div class="col-12 col-lg-4">
                     <div class="cart-card">
                         <h2 class="summary-title">Resumen de la Orden</h2>
-                        
+
                         <div class="summary-row">
                             <span>Subtotal Productos</span>
                             <span class="fw-medium">$<%= TotalCarrito().ToString("N2") %></span>
@@ -357,13 +363,13 @@
                             <span>Costo de Envío</span>
                             <span class="text-success fw-medium">Gratis</span>
                         </div>
-                        
+
                         <!-- Total de la Venta final -->
                         <div class="summary-total-row">
                             <span>Total</span>
                             <span>$<%= TotalCarrito().ToString("N2") %></span>
                         </div>
-                        
+
                         <!-- Botón Finalizar Venta -->
                         <asp:Button ID="btnFinalizarVenta" runat="server" Text="Finalizar Compra" CssClass="btn-finalizar" />
                     </div>
@@ -383,17 +389,20 @@
                     <div class="col-6 col-md-4 ps-md-5">
                         <h5>Enlaces Útiles</h5>
                         <ul class="list-unstyled mt-3 small">
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootHome" runat="server" NavigateUrl="~/home.aspx">Inicio</asp:HyperLink></li>
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootProd" runat="server" NavigateUrl="~/productos.aspx">Catálogo de Productos</asp:HyperLink></li>
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootAbout" runat="server" NavigateUrl="~/about.aspx">Quiénes Somos</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootHome" runat="server" NavigateUrl="~/home.aspx">Inicio</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootProd" runat="server" NavigateUrl="~/productos.aspx">Catálogo de Productos</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootAbout" runat="server" NavigateUrl="~/about.aspx">Quiénes Somos</asp:HyperLink></li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-4">
                         <h5>Contacto y Soporte</h5>
                         <ul class="list-unstyled mt-3 small text-white-50">
-                            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-white"></i> Av. de la Tienda 1234, CABA</li>
-                            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-white"></i> +54 11 4444-5555</li>
-                            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-white"></i> soporte@nlshop.com</li>
+                            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-white"></i>Av. de la Tienda 1234, CABA</li>
+                            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-white"></i>+54 11 4444-5555</li>
+                            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-white"></i>soporte@nlshop.com</li>
                         </ul>
                     </div>
                 </div>

@@ -16,9 +16,15 @@ namespace Ecomerce
         {
             if (!IsPostBack)
             { 
-            NegocioProducto negPr = new NegocioProducto();
-            productosList = negPr.obtenerTodosLosProductos();
-                
+                NegocioProducto negPr = new NegocioProducto();
+                productosList = negPr.obtenerTodosLosProductos();
+
+                if (Session["Usuario"] != null)
+                {
+                    Cliente objCliente = new Cliente();
+                    objCliente = (Cliente)Session["Usuario"];
+                    lblNombreAdmin.Text = objCliente.nombre+" "+objCliente.apellido;
+                }
                
                     
             }

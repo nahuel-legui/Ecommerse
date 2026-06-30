@@ -18,16 +18,22 @@ namespace Ecomerce
             if (!IsPostBack) { 
                 cargarProductos(); 
                 cargarCategorias(); 
-                if (Session["Carrito"] == null) Session["Carrito"] = new List<ItemCarrito>(); 
-                
+                if (Session["Carrito"] == null) Session["Carrito"] = new List<ItemCarrito>();
+
+                if (Session["Usuario"] != null)
+                {
+                    Cliente objCliente = new Cliente();
+                    objCliente = (Cliente)Session["Usuario"];
+                    lblNombreAdmin.Text = objCliente.nombre + " " + objCliente.apellido;
+                }
             }
 
 
         }
         public void cargarCategorias()
         {
-            negPr = new NegocioProducto();
-            ddlCategorias.DataSource = negPr.obtenerTodasCategorias();
+            NegocioCategoria  negCat = new NegocioCategoria();
+            ddlCategorias.DataSource = negCat.obtenerTodasCategorias();
             ddlCategorias.DataValueField = "IdCategoria";
             ddlCategorias.DataTextField = "descripcion";
             ddlCategorias.DataBind();

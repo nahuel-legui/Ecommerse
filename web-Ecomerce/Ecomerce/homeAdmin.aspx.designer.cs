@@ -33,13 +33,22 @@ namespace Ecomerce
         protected global::System.Web.UI.WebControls.HyperLink lnkLogoAdmin;
 
         /// <summary>
-        /// Control lnkSalir.
+        /// Control lblNombreAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkSalir;
+        protected global::System.Web.UI.WebControls.Label lblNombreAdmin;
+
+        /// <summary>
+        /// Control btnSalir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnSalir;
 
         /// <summary>
         /// Control lnkAbmlCliente.
@@ -76,14 +85,5 @@ namespace Ecomerce
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkSeguimiento;
-
-        /// <summary>
-        /// Control lnkReportes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkReportes;
     }
 }

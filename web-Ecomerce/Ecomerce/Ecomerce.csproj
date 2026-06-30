@@ -80,7 +80,6 @@
     <Content Include="login.aspx" />
     <Content Include="perfil.aspx" />
     <Content Include="registrarse.aspx" />
-    <Content Include="reporte.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +139,7 @@
     <Compile Include="misCompras.aspx.designer.cs">
       <DependentUpon>misCompras.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Negocio\NegocioCategoria.cs" />
     <Compile Include="Negocio\NegocioCliente.cs" />
     <Compile Include="Negocio\NegocioProducto.cs" />
     <Compile Include="Negocio\NegocioVenta.cs" />
@@ -178,13 +178,6 @@
     </Compile>
     <Compile Include="registrarse.aspx.designer.cs">
       <DependentUpon>registrarse.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="reporte.aspx.cs">
-      <DependentUpon>reporte.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="reporte.aspx.designer.cs">
-      <DependentUpon>reporte.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
