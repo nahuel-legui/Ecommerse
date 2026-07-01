@@ -135,7 +135,7 @@ namespace database
                 if(!detalle) throw new Exception("Error al generar el detalle de la venta");
 
                 // crear Seguimiento
-                consulta = "INSERT INTO seguimiento (idVenta_Vn_Sg, enCamino_Sg, entregado_Sg) VALUES (@idVenta,1,0);";
+                consulta = "INSERT INTO seguimiento (idVenta_Vn_Sg, enCamino_Sg, entregado_Sg) VALUES (@idVenta,0,0);";
                 cn.setearConsulta(consulta);
                 cn.setearParametros("@idVenta", idVenta);
                 cn.ejecutarAccion();
