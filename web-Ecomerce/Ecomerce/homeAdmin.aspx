@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel de Administración - NL Shop</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
@@ -66,10 +66,10 @@
             text-decoration: none;
         }
 
-        .btn-logout-admin:hover {
-            background-color: #E53E3E;
-            color: #ffffff;
-        }
+            .btn-logout-admin:hover {
+                background-color: #E53E3E;
+                color: #ffffff;
+            }
 
         /* --- TARJETAS DEL DASHBOARD (MÓDULOS) --- */
         .dashboard-title {
@@ -95,11 +95,11 @@
             color: var(--color-texto) !important;
         }
 
-        .admin-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(43, 108, 176, 0.1);
-            border-bottom: 4px solid var(--color-principal);
-        }
+            .admin-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 25px rgba(43, 108, 176, 0.1);
+                border-bottom: 4px solid var(--color-principal);
+            }
 
         .admin-icon-wrapper {
             width: 65px;
@@ -133,6 +133,11 @@
             margin-bottom: 0;
         }
 
+        .iconoAdmin {
+            font-size: 1.2rem;
+            color: white;
+        }
+
         /* --- FOOTER --- */
         footer {
             background-color: #1A202C;
@@ -143,7 +148,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
         <!-- ================= NAVBAR ADMINISTRADOR ================= -->
         <nav class="navbar navbar-expand-lg navbar-admin sticky-top">
             <div class="container">
@@ -155,10 +160,14 @@
                 </div>
 
                 <div class="ms-auto d-flex align-items-center gap-3">
-                    <span class="text-white-50 small d-none d-sm-inline"><i class="bi bi-person-circle me-1"></i>Admin Principal</span>
-                    <asp:HyperLink ID="lnkSalir" runat="server" NavigateUrl="~/login.aspx" CssClass="btn-logout-admin">
+
+                    <i class="bi bi-person-circle me-1 iconoAdmin "></i>
+                    <asp:Label ID="lblNombreAdmin" runat="server" Text="" CssClass="text-white-50 small d-none d-sm-inline iconoAdmin ">
+                    </asp:Label>
+                    <asp:LinkButton ID="btnSalir" runat="server" CssClass="btn-logout-admin" OnClick="btnSalir_Click">
                         <i class="bi bi-box-arrow-right me-1"></i>Salir
-                    </asp:HyperLink>
+                    </asp:LinkButton>
+
                 </div>
             </div>
         </nav>
@@ -169,62 +178,51 @@
                 <h1 class="dashboard-title">¡Bienvenido Administrador!</h1>
                 <p class="text-muted">Selecciona uno de los siguientes módulos para gestionar el e-commerce.</p>
             </div>
-            
-            <!-- Rejilla de Accesos a Páginas ABML y Gestión -->
-            <div class="row g-4">
-                
+
+            <!-- Rejilla de Accesos a Páginas ABML y Gestión Centrada -->
+            <div class="row g-4 justify-content-center">
+
                 <!-- Tarjeta 1: ABML Cliente -->
                 <div class="col-12 col-sm-6 col-md-4">
                     <asp:HyperLink ID="lnkAbmlCliente" runat="server" NavigateUrl="~/abmlCliente.aspx" CssClass="admin-card">
-                        <div class="admin-icon-wrapper">
-                            <i class="bi bi-people-fill"></i>
-                        </div>
-                        <h3 class="module-title">ABML Clientes</h3>
-                        <p class="module-description">Alta, baja, modificación y listado de todas las cuentas de usuarios de la tienda.</p>
+                <div class="admin-icon-wrapper">
+                    <i class="bi bi-people-fill"></i>
+                </div>
+                <h3 class="module-title">ABML Clientes</h3>
+                <p class="module-description">Alta, baja, modificación y listado de todas las cuentas de usuarios de la tienda.</p>
                     </asp:HyperLink>
                 </div>
 
                 <!-- Tarjeta 2: ABML Producto -->
                 <div class="col-12 col-sm-6 col-md-4">
                     <asp:HyperLink ID="lnkAbmlProducto" runat="server" NavigateUrl="~/abmlProducto.aspx" CssClass="admin-card">
-                        <div class="admin-icon-wrapper">
-                            <i class="bi bi-box-seam-fill"></i>
-                        </div>
-                        <h3 class="module-title">ABML Productos</h3>
-                        <p class="module-description">Administra el stock, añade nuevos artículos, cambia precios y edita las categorías.</p>
+                <div class="admin-icon-wrapper">
+                    <i class="bi bi-box-seam-fill"></i>
+                </div>
+                <h3 class="module-title">ABML Productos</h3>
+                <p class="module-description">Administra el stock, añade nuevos artículos, cambia precios y edita las categorías.</p>
                     </asp:HyperLink>
                 </div>
 
-                <!-- Tarjeta 3: ABML Venta -->
+                <!-- Tarjeta 3: ABML Venta (Removido el offset para que fluya en la segunda fila centrado) -->
                 <div class="col-12 col-sm-6 col-md-4">
                     <asp:HyperLink ID="lnkAbmlVenta" runat="server" NavigateUrl="~/abmlVenta.aspx" CssClass="admin-card">
-                        <div class="admin-icon-wrapper">
-                            <i class="bi bi-receipt"></i>
-                        </div>
-                        <h3 class="module-title">ABML Ventas</h3>
-                        <p class="module-description">Control de transacciones efectuadas, edición de comprobantes y anulaciones de órdenes.</p>
+                <div class="admin-icon-wrapper">
+                    <i class="bi bi-receipt"></i>
+                </div>
+                <h3 class="module-title">ABML Ventas</h3>
+                <p class="module-description">Control de transacciones efectuadas, edición de comprobantes y anulaciones de órdenes.</p>
                     </asp:HyperLink>
                 </div>
 
-                <!-- Tarjeta 4: Seguimiento -->
-                <div class="col-12 col-sm-6 col-md-4 offset-md-2">
-                    <asp:HyperLink ID="lnkSeguimiento" runat="server"  CssClass="admin-card" NavigateUrl="~/adminSeguimiento.aspx">
-                        <div class="admin-icon-wrapper">
-                            <i class="bi bi-truck-flatbed"></i>
-                        </div>
-                        <h3 class="module-title">Seguimiento</h3>
-                        <p class="module-description">Monitorea los despachos, actualiza los estados de envío (Pendiente, Enviado, Entregado).</p>
-                    </asp:HyperLink>
-                </div>
-
-                <!-- Tarjeta 5: Reportes -->
+                <!-- Tarjeta 4: Seguimiento (Removido el offset para que fluya en la segunda fila centrado) -->
                 <div class="col-12 col-sm-6 col-md-4">
-                    <asp:HyperLink ID="lnkReportes" runat="server" NavigateUrl="~/reporte.aspx" CssClass="admin-card">
-                        <div class="admin-icon-wrapper">
-                            <i class="bi bi-bar-chart-line-fill"></i>
-                        </div>
-                        <h3 class="module-title">Reportes</h3>
-                        <p class="module-description">Visualiza estadísticas clave, los productos más vendidos y balances financieros generales.</p>
+                    <asp:HyperLink ID="lnkSeguimiento" runat="server" CssClass="admin-card" NavigateUrl="~/adminSeguimiento.aspx">
+                <div class="admin-icon-wrapper">
+                    <i class="bi bi-truck-flatbed"></i>
+                </div>
+                <h3 class="module-title">Seguimiento</h3>
+                <p class="module-description">Monitorea los despachos, actualiza los estados de envío (Pendiente, Enviado, Entregado).</p>
                     </asp:HyperLink>
                 </div>
 

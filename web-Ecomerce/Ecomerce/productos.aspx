@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Productos - Mi E-commerce</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
@@ -51,6 +51,11 @@
             transition: color 0.2s ease;
         }
 
+        .iconoAdmin {
+            font-size: 1.2rem;
+            color: black !important;
+        }
+
         .nav-link-custom:hover {
             color: var(--color-principal) !important;
         }
@@ -62,9 +67,9 @@
             transition: color 0.2s ease;
         }
 
-        .nav-icon:hover {
-            color: var(--color-principal) !important;
-        }
+            .nav-icon:hover {
+                color: var(--color-principal) !important;
+            }
 
         .cart-badge {
             position: absolute;
@@ -110,15 +115,15 @@
             margin-bottom: 1.25rem;
         }
 
-        .input-group-custom i {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #A0AEC0;
-            font-size: 1rem;
-            z-index: 10;
-        }
+            .input-group-custom i {
+                position: absolute;
+                left: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #A0AEC0;
+                font-size: 1rem;
+                z-index: 10;
+            }
 
         .form-control-custom {
             width: 100%;
@@ -130,11 +135,11 @@
             transition: all 0.2s ease;
         }
 
-        .form-control-custom:focus {
-            outline: none;
-            border-color: var(--color-principal);
-            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
-        }
+            .form-control-custom:focus {
+                outline: none;
+                border-color: var(--color-principal);
+                box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+            }
 
         .btn-filtrar {
             background-color: var(--color-principal);
@@ -148,10 +153,10 @@
             transition: background-color 0.2s ease;
         }
 
-        .btn-filtrar:hover {
-            background-color: var(--color-principal-hover);
-            cursor: pointer;
-        }
+            .btn-filtrar:hover {
+                background-color: var(--color-principal-hover);
+                cursor: pointer;
+            }
 
         /* --- SECCIÓN PRODUCTOS (DERECHA) --- */
         .product-card {
@@ -165,10 +170,10 @@
             flex-direction: column;
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        }
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            }
 
         .product-img-wrapper {
             height: 200px;
@@ -223,11 +228,11 @@
             transition: all 0.2s ease;
         }
 
-        .btn-agregar-carrito:hover {
-            background-color: var(--color-principal);
-            color: #ffffff;
-            cursor: pointer;
-        }
+            .btn-agregar-carrito:hover {
+                background-color: var(--color-principal);
+                color: #ffffff;
+                cursor: pointer;
+            }
 
         /* --- FOOTER --- */
         footer {
@@ -236,25 +241,25 @@
             margin-top: auto;
         }
 
-        footer h5 {
-            color: #ffffff;
-            font-weight: 600;
-        }
+            footer h5 {
+                color: #ffffff;
+                font-weight: 600;
+            }
 
-        footer a {
-            color: #A0AEC0;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
+            footer a {
+                color: #A0AEC0;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
 
-        footer a:hover {
-            color: #ffffff;
-        }
+                footer a:hover {
+                    color: #ffffff;
+                }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        
+
         <!-- ================= NAVBAR / HEADER ================= -->
         <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
             <div class="container">
@@ -280,10 +285,13 @@
                     </ul>
 
                     <div class="d-flex align-items-center gap-4">
+                  
+                        <asp:Label ID="lblNombreAdmin" runat="server" Text="" CssClass="text-white-50 small d-none d-sm-inline iconoAdmin ">
+                        </asp:Label>
                         <asp:HyperLink ID="lnkPerfil" runat="server" NavigateUrl="~/perfil.aspx" CssClass="nav-icon" ToolTip="Mi Perfil">
                             <i class="bi bi-person-circle"></i>
                         </asp:HyperLink>
-                        
+
                         <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="~/carrito.aspx" CssClass="nav-icon" ToolTip="Carrito de compras">
                             <i class="bi bi-cart3"></i>
                             <span class="cart-badge"><%= CantidadCarrito() %></span>
@@ -296,12 +304,12 @@
         <!-- ================= CUERPO PRINCIPAL (FILTROS + CATALOGO) ================= -->
         <div class="container my-5">
             <div class="row g-4">
-                
+
                 <!-- COLUMNA IZQUIERDA: FILTROS -->
                 <div class="col-12 col-lg-3">
                     <div class="filter-card">
                         <h2 class="filter-title"><i class="bi bi-sliders me-2"></i>Filtros</h2>
-                        
+
                         <!-- Filtro por Nombre -->
                         <div class="mb-3">
                             <asp:Label ID="lblBuscar" runat="server" Text="Buscar por nombre" CssClass="form-label-custom"></asp:Label>
@@ -332,22 +340,22 @@
                 <!-- COLUMNA DERECHA: CATÁLOGO DE PRODUCTOS -->
                 <div class="col-12 col-lg-9">
                     <div class="row g-4">
-                        
+
                         <!-- Producto 1 -->
                         <asp:Repeater ID="RepProductos" runat="server">
                             <ItemTemplate>
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <div class="product-card">
-                                <div class="product-img-wrapper">
-                                    <img src="<%# Eval("ImagenUrl") %>" class="product-img" alt="Producto" />
+                                <div class="col-12 col-sm-6 col-md-4">
+                                    <div class="product-card">
+                                        <div class="product-img-wrapper">
+                                            <img src="<%# Eval("ImagenUrl") %>" class="product-img" alt="Producto" />
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-title"><%# Eval("nombreProducto")  %></h3>
+                                            <p class="product-price">$<%# Eval("precioUnitario", "{0:N2}") %></p>
+                                            <asp:Button ID="btnC1" runat="server" Text="Agregar al Carrito" CssClass="btn-agregar-carrito" OnClick="btnAgregarItem" CommandArgument='<%# Eval("idProducto") %>' />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="product-body">
-                                    <h3 class="product-title"><%# Eval("nombreProducto")  %></h3>
-                                    <p class="product-price">$<%# Eval("precioUnitario", "{0:N2}") %></p>
-                                    <asp:Button ID="btnC1" runat="server" Text="Agregar al Carrito" CssClass="btn-agregar-carrito" OnClick="btnAgregarItem" CommandArgument='<%# Eval("idProducto") %>'/>
-                                </div>
-                            </div>
-                        </div>
                             </ItemTemplate>
 
                         </asp:Repeater>
@@ -395,17 +403,20 @@
                     <div class="col-6 col-md-4 ps-md-5">
                         <h5>Enlaces Útiles</h5>
                         <ul class="list-unstyled mt-3 small">
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootHome" runat="server" NavigateUrl="~/home.aspx">Inicio</asp:HyperLink></li>
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootProd" runat="server" NavigateUrl="~/productos.aspx">Catálogo de Productos</asp:HyperLink></li>
-                            <li class="mb-2"><asp:HyperLink ID="lnkFootAbout" runat="server" NavigateUrl="~/about.aspx">Quiénes Somos</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootHome" runat="server" NavigateUrl="~/home.aspx">Inicio</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootProd" runat="server" NavigateUrl="~/productos.aspx">Catálogo de Productos</asp:HyperLink></li>
+                            <li class="mb-2">
+                                <asp:HyperLink ID="lnkFootAbout" runat="server" NavigateUrl="~/about.aspx">Quiénes Somos</asp:HyperLink></li>
                         </ul>
                     </div>
                     <div class="col-6 col-md-4">
                         <h5>Contacto y Soporte</h5>
                         <ul class="list-unstyled mt-3 small text-white-50">
-                            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-white"></i> Av. de la Tienda 1234, CABA</li>
-                            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-white"></i> +54 11 4444-5555</li>
-                            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-white"></i> soporte@ecommerce.com</li>
+                            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-white"></i>Av. de la Tienda 1234, CABA</li>
+                            <li class="mb-2"><i class="bi bi-telephone-fill me-2 text-white"></i>+54 11 4444-5555</li>
+                            <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-white"></i>soporte@ecommerce.com</li>
                         </ul>
                     </div>
                 </div>

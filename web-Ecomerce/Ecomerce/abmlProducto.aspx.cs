@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Database;
 
 namespace Ecomerce
 {
@@ -37,8 +38,8 @@ namespace Ecomerce
         }
         public void cargarCategorias()
         {
-            negPr= new NegocioProducto();
-            ddlCategoria.DataSource=negPr.obtenerTodasCategorias();
+            NegocioCategoria  negCat= new NegocioCategoria();
+            ddlCategoria.DataSource=negCat.obtenerTodasCategorias();
             ddlCategoria.DataValueField = "IdCategoria";
             ddlCategoria.DataTextField = "descripcion";
             ddlCategoria.DataBind();
@@ -71,7 +72,6 @@ namespace Ecomerce
             txtImagenUrl.Text = objProducto.ImagenUrl;
             txtPrecioUnitario.Text = objProducto.precioUnitario.ToString(CultureInfo.InvariantCulture);
             txtStock.Text=objProducto.stock.ToString();
-            btnGuardar.Text = "Modificar Producto";
             ddlCategoria.SelectedValue = objProducto.categoria.idCategoria.ToString();
 
 
@@ -92,7 +92,6 @@ namespace Ecomerce
         {
             limpiar();
             lblMensaje.Text = "";
-            btnGuardar.Text = "Agregar Producto";
             lblBorrar.Text = "";
 
         }
@@ -109,7 +108,10 @@ namespace Ecomerce
 
 
         protected void btnGuardar_Click(object sender, EventArgs e)
+
         {
+            
+
             if (!verificarVacio())
             {
                 lblMensaje.Text = "Necesitar llenar todos los campos";
@@ -201,6 +203,30 @@ namespace Ecomerce
             cargarProductos();
             limpiar();
             cargarProductosbaja();
+        }
+
+        protected void btnCategoria_Click(object sender, EventArgs e)
+        {
+            if (txtCategoria.Text.Length == 0)
+            {
+                lblCat.Text = "No se puedo agregar categoria";
+                lblCat.ForeColor= System.Drawing.Color.Red;
+                return;
+            }
+            string cat=txtCategoria.Text;
+            NegocioCategoria negCat=new NegocioCategoria();
+            if (negCat.agregarCategoria(cat))
+            {
+                lblCat.Text = "La categoria se agrego correctamente";
+                lblCat.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                lblCat.Text = "La categoria no se pudo agregar";
+                lblCat.ForeColor=System.Drawing.Color.Red;
+            }
+            cargarCategorias();
+            txtCategoria.Text = "";
         }
     }
 }

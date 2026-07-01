@@ -257,32 +257,7 @@ namespace database
 
             
         }
-        public List<Categoria> obtenerTodasCategorias()
-        {
-            cn=new Conexion();
-            try
-            {
-                string consulta = "select * from Categoria";
-                cn.setearConsulta(consulta);
-                SqlDataReader lector = cn.ejecutarLectura();
-
-                List<Categoria> lista = new List<Categoria>();
-                while (lector.Read())
-                {
-                    Categoria objCat = new Categoria();
-                    objCat.idCategoria = int.Parse(lector[0].ToString());
-                    objCat.descripcion = lector[1].ToString();
-                    lista.Add(objCat);
-                }
-
-                return lista;
-            }
-            catch (Exception ex )
-            {
-
-                throw ex;
-            }
-        }
+       
 
         public bool darBajaLogica(string idProducto)
         {
