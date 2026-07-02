@@ -341,15 +341,6 @@
                                     <!-- Botón eliminar maqueta -->
                                     <asp:Button type="button" runat="server" class="btn-delete-item" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnEliminar_Click" Text="🗑"></asp:Button>
                                 </div>
-                            <!-- Control de cantidad maqueta -->
-                                <div class="quantity-control">
-                                    <asp:Button ID="btnMenos" runat="server" Text="-" CssClass="btn-qty" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnMenos_Click" />
-                                    <span class="qty-number"><%# Eval("Cantidad") %></span>
-                                    <asp:Button ID="btnMas" runat="server" Text="+" CssClass="btn-qty" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnMas_Click" />
-                                </div>
-                            <!-- Botón eliminar maqueta -->
-                                <asp:Button ID="btnEliminar" runat="server" CssClass="btn-delete-item" CommandArgument='<%# Eval("Producto.idProducto") %>' OnClick="btnEliminar_Click" Text="🗑" />
-                            </div>
                             </ItemTemplate>
                         </asp:Repeater>
 

@@ -237,6 +237,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        
 
         <nav class="navbar navbar-expand-lg navbar-admin sticky-top">
             <div class="container">
@@ -258,7 +259,22 @@
         <div class="container my-5">
 
             <div class="abml-card">
-                <h2 class="abml-title"><i class="bi bi-box-seam-fill"></i>Inventario de Productos</h2>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="abml-title mb-0">
+        <i class="bi bi-box-seam-fill"></i>
+        Inventario de Productos
+    </h2>
+
+    <button
+    type="button"
+    class="btn btn-success"
+    data-bs-toggle="modal"
+    data-bs-target="#modalAgregarOModificarItem"
+    onclick="limpiarFormulario()">
+    <i class="bi bi-plus-lg me-1"></i>
+    Agregar Producto
+</button>
+</div>
                 <p class="text-muted small mb-4">Listado actual de productos en catálogo. Utilice las acciones de la derecha para modificar valores o dar de baja un producto.</p>
 
                 <div class="table-responsive">
@@ -286,9 +302,12 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="d-flex justify-content-center gap-2">
-                                                <asp:LinkButton ID="btnEditarRow" runat="server" CssClass="btn-action-edit" ToolTip="Modificar Producto" CommandName="Editar" CommandArgument='<%# Eval("idProducto") %>' OnClick="btnEditarRow_Click">
-                                                    <i class="bi bi-pencil-square"></i>
-                                                </asp:LinkButton>
+                                                <asp:LinkButton ID="btnEditarRow" runat="server"
+    CssClass="btn-action-edit"
+    CommandArgument='<%# Eval("idProducto") %>'
+    OnClick="btnEditarRow_Click">
+    <i class="bi bi-pencil-square"></i>
+</asp:LinkButton>
                                                 <asp:LinkButton ID="btnBorrarRow" runat="server" CssClass="btn-action-delete" ToolTip="Dar de Baja Producto" CommandName="Eliminar" CommandArgument='<%# Eval("idProducto") %>' OnClick="btnBorrarRow_Click"> 
                                                     <i class="bi bi-trash3-fill"></i>
                                                 </asp:LinkButton>
@@ -303,54 +322,7 @@
                 </div>
             </div>
         
-        <div class="abml-card">
-            <h2 class="abml-title"><i class="bi bi-pencil-fill"></i>Datos del Producto</h2>
-            <p class="text-muted small mb-4">Complete el formulario para dar de alta un nuevo artículo o modificar los datos del producto seleccionado arriba.</p>
-
-            <%-- Guardamos el idProducto en un campo oculto cuando editamos --%>
-            <asp:HiddenField ID="hfProductoID" runat="server" />
-
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <asp:Label ID="lblNombre" runat="server" Text="Nombre del Producto" CssClass="form-label-custom"></asp:Label>
-                    <asp:TextBox ID="txtNombreProducto" runat="server" CssClass="form-control-custom" placeholder="Ej. Gorra Trucker Urbana" MaxLength="30"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <asp:Label ID="lblPrecio" runat="server" Text="Precio Unitario ($)" CssClass="form-label-custom"></asp:Label>
-                    <asp:TextBox ID="txtPrecioUnitario" runat="server" CssClass="form-control-custom" placeholder="0.00" type="number" step="0.01"></asp:TextBox>
-                </div>
-                <div class="col-md-3">
-                    <asp:Label ID="lblIdProducto" runat="server" Text="" Enabled="True" Visible="False"></asp:Label>
-                    <asp:Label ID="lblStock" runat="server" Text="Stock Inicial" CssClass="form-label-custom"></asp:Label>
-                    <asp:TextBox ID="txtStock" runat="server" CssClass="form-control-custom" placeholder="0" type="number"></asp:TextBox>
-                </div>
-
-                <div class="col-12">
-                    <asp:Label ID="lblCategoria" runat="server" Text="Categoría del Producto" CssClass="form-label-custom"></asp:Label>
-                    <asp:DropDownList ID="ddlCategoria" runat="server" CssClass="form-control-custom">
-                        <asp:ListItem Value="0">-- Seleccione una Categoría --</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-
-                <div class="col-12">
-                    <asp:Label ID="lblImagenUrl" runat="server" Text="URL de la Imagen del Producto" CssClass="form-label-custom"></asp:Label>
-                    <asp:TextBox ID="txtImagenUrl" runat="server" CssClass="form-control-custom" placeholder="https://ejemplo.com/imagenes/producto.jpg" MaxLength="500"></asp:TextBox>
-                </div>
-                <div class="col-12">
-                    <asp:Label ID="lblDescripcion" runat="server" Text="Descripción del Producto" CssClass="form-label-custom"></asp:Label>
-                    <asp:TextBox ID="txtDescripcion" runat="server" TextMode="MultiLine" Rows="3" CssClass="form-control-custom" placeholder="Escriba aquí los detalles y especificaciones del producto..." MaxLength="300"></asp:TextBox>
-                </div>
-            </div>
-
-            <div class="mt-4 d-flex gap-2 justify-content-end">
-                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar / Limpiar" CssClass="btn-cancelar" OnClick="btnCancelar_Click" />
-
-                <button type="button" class="btn-guardar" data-bs-toggle="modal" data-bs-target="#modalConfirmar">
-                    Guardar Producto
-                </button>
-            </div>
-            <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
-        </div>
+        
 
 
         <div class="abml-card">
@@ -371,7 +343,9 @@
 
             <div class="mt-4 d-flex gap-2 justify-content-end">
 
-                <asp:Button ID="btnCategoria" runat="server" Text="Confirmar" CssClass="btn-guardar" OnClick="btnCategoria_Click" />
+                   <button type="button"class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalConfirmar">
+                        Agregar Marca
+                  </button>
 
             </div>
             <asp:Label ID="lblCat" runat="server" Text=""></asp:Label>
@@ -379,7 +353,8 @@
 
 
         <div class="abml-card">
-            <h2 class="abml-title"><i class="bi bi-box-seam-fill"></i>Inventario de Productos Dados de Baja</h2>
+            <h2 class="abml-title"><i class="bi bi-box-seam-fill"></i>Inventario de Productos Dados de Baja</h2> 
+            
             <p class="text-muted small mb-4">Listado actual de productos en catálogo dado de baja . Utilice la accion de la derecha para dar de alta un producto .</p>
 
             <div class="table-responsive">
@@ -421,6 +396,128 @@
             </div>
         </div>
 
+                    <div class="modal fade" id="modalAgregarOModificarItem" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content border-0 shadow">
+
+            <!-- Header -->
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-pencil-fill me-2"></i>
+                    Datos del Producto
+                </h5>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+
+                <p class="text-muted small mb-4">
+                    Complete el formulario para dar de alta un nuevo artículo o modificar los datos del producto seleccionado.
+                </p>
+
+                <asp:HiddenField ID="hfProductoID" runat="server" />
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <asp:Label ID="lblNombre" runat="server"
+                            Text="Nombre del Producto"
+                            CssClass="form-label-custom"></asp:Label>
+
+                        <asp:TextBox ID="txtNombreProducto" runat="server"
+                            CssClass="form-control-custom"
+                            placeholder="Ej. Gorra Trucker Urbana"
+                            MaxLength="30"></asp:TextBox>
+                    </div>
+
+                    <div class="col-md-3">
+                        <asp:Label ID="lblPrecio" runat="server"
+                            Text="Precio Unitario ($)"
+                            CssClass="form-label-custom"></asp:Label>
+
+                        <asp:TextBox ID="txtPrecioUnitario" runat="server"
+                            CssClass="form-control-custom"
+                            placeholder="0.00"
+                            type="number"
+                            step="0.01"></asp:TextBox>
+                    </div>
+
+                    <div class="col-md-3">
+                        <asp:Label ID="lblStock" runat="server"
+                            Text="Stock Inicial"
+                            CssClass="form-label-custom"></asp:Label>
+
+                        <asp:TextBox ID="txtStock" runat="server"
+                            CssClass="form-control-custom"
+                            placeholder="0"
+                            type="number"></asp:TextBox>
+                    </div>
+
+                    <div class="col-12">
+                        <asp:Label ID="lblCategoria" runat="server"
+                            Text="Categoría"
+                            CssClass="form-label-custom"></asp:Label>
+
+                        <asp:DropDownList ID="ddlCategoria" runat="server"
+                            CssClass="form-control-custom">
+                            <asp:ListItem Value="0">-- Seleccione una Categoría --</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+
+                    <div class="col-12">
+                        <asp:Label ID="lblImagenUrl" runat="server"
+                            Text="URL de la Imagen"
+                            CssClass="form-label-custom"></asp:Label>
+
+                        <asp:TextBox ID="txtImagenUrl" runat="server"
+                            CssClass="form-control-custom"
+                            placeholder="https://..."
+                            MaxLength="500"></asp:TextBox>
+                    </div>
+
+                    <div class="col-12">
+                        <asp:Label ID="lblDescripcion" runat="server"
+                            Text="Descripción"
+                            CssClass="form-label-custom"></asp:Label>
+
+                        <asp:TextBox ID="txtDescripcion" runat="server"
+                            TextMode="MultiLine"
+                            Rows="4"
+                            CssClass="form-control-custom"
+                            placeholder="Ingrese una descripción..."
+                            MaxLength="300"></asp:TextBox>
+                    </div>
+
+                </div>
+
+                <asp:Label ID="lblMensaje" runat="server" CssClass="mt-3 d-block"></asp:Label>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+
+                <asp:Button ID="btnCancelar"
+                    runat="server"
+                    Text="Cancelar / Limpiar"
+                    CssClass="btn-cancelar"
+                    OnClick="btnCancelar_Click" />
+
+                <asp:Button
+    ID="Button1"
+    runat="server"
+    Text="Guardar Producto"
+    CssClass="btn-guardar"
+    OnClick="btnGuardar_Click" />
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 
         <!-- Modal -->
@@ -431,11 +528,9 @@
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Desea confirmar la accion ? </h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <asp:Button ID="btnGuardar" runat="server" Text="Confirmar" CssClass="btn-guardar" OnClick="btnGuardar_Click" />
+                        <asp:Button ID="btnGuardar" runat="server" Text="Confirmar" CssClass="btn-guardar" OnClick="btnCategoria_Click" />
                     </div>
                 </div>
             </div>
@@ -448,6 +543,7 @@
                 <p class="mb-0 text-white-50 mt-2 mt-md-0">Módulo: Productos</p>
             </div>
         </footer>
+        </div>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

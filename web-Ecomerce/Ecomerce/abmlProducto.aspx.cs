@@ -62,23 +62,37 @@ namespace Ecomerce
 
         protected void btnEditarRow_Click(object sender, EventArgs e)
         {
-            negPr= new NegocioProducto();
+            negPr = new NegocioProducto();
+
             string idProducto = ((LinkButton)sender).CommandArgument;
-            Producto objProducto=new Producto();
-            objProducto = negPr.obtenerProductoXId(int.Parse(idProducto));
-            lblIdProducto.Text = idProducto;
+            Producto objProducto = negPr.obtenerProductoXId(int.Parse(idProducto));
+
+            hfProductoID.Value = idProducto;
+
             txtNombreProducto.Text = objProducto.nombreProducto;
             txtDescripcion.Text = objProducto.descripcion;
             txtImagenUrl.Text = objProducto.ImagenUrl;
             txtPrecioUnitario.Text = objProducto.precioUnitario.ToString(CultureInfo.InvariantCulture);
-            txtStock.Text=objProducto.stock.ToString();
+            txtStock.Text = objProducto.stock.ToString();
             ddlCategoria.SelectedValue = objProducto.categoria.idCategoria.ToString();
 
+            string script = @"
+        window.setTimeout(function () {
+            var modal = new bootstrap.Modal(document.getElementById('modalAgregarOModificarItem'));
+            modal.show();
+        }, 0);
+    ";
 
+            Page.ClientScript.RegisterStartupScript(
+                this.GetType(),
+                "openModal",
+                script,
+                true
+            );
         }
         private void limpiar()
         {
-            lblIdProducto.Text = "";
+            hfProductoID.Value = "";
             txtNombreProducto.Text = "";
             txtDescripcion.Text = "";
             txtImagenUrl.Text = "";
@@ -86,6 +100,21 @@ namespace Ecomerce
             txtStock.Text = "";
             
 
+        }
+
+        protected void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            limpiar();
+
+            ClientScript.RegisterStartupScript(
+                this.GetType(),
+                "AbrirModal",
+                @"
+window.onload = function () {
+    document.querySelector('[data-bs-target=""#modalAgregarOModificarItem""]').click();
+};
+",
+                true);
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -128,7 +157,7 @@ namespace Ecomerce
             objProducto.precioUnitario = float.Parse((txtPrecioUnitario.Text));
             objProducto.categoria = new Categoria();
             objProducto.categoria.idCategoria = int.Parse(ddlCategoria.SelectedValue);
-            if (lblIdProducto.Text.Length == 0)
+            if (string.IsNullOrEmpty(hfProductoID.Value))
             {
                 //si no tiene id agregamos 
                 if (negPr.agregarProducto(objProducto))
@@ -146,7 +175,7 @@ namespace Ecomerce
             {
                 //si tiene id Modificamos 
 
-                objProducto.idProducto = int.Parse(lblIdProducto.Text);
+                objProducto.idProducto = int.Parse(hfProductoID.Value);
                 
                 if (negPr.modificarProducto(objProducto))
                 {
@@ -228,5 +257,7 @@ namespace Ecomerce
             cargarCategorias();
             txtCategoria.Text = "";
         }
+
+        
     }
 }

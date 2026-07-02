@@ -18,7 +18,7 @@ namespace database
             daoDetalleVentas cnDet = new daoDetalleVentas();
             try
             {
-                cn.setearConsulta("SELECT idVenta_Vn as idVenta ,dni_Cl_Vn as dniCliente ,total_Vn as total ,fechaVenta_Vn as fechaVenta,enCamino_Sg,entregado_Sg FROM Ventas");
+                cn.setearConsulta("SELECT V.idVenta_Vn as idVenta ,V.dni_Cl_Vn as dniCliente ,V.total_Vn as total ,V.fechaVenta_Vn as fechaVenta,S.enCamino_Sg,S.entregado_Sg FROM Ventas V LEFT JOIN seguimiento S ON V.idVenta_Vn = S.idVenta_Vn_Sg;");
                 SqlDataReader lector = cn.ejecutarLectura();
                 while (lector.Read())
                 {
@@ -51,7 +51,7 @@ namespace database
 
             try
             {
-                string consulta = "update Ventas set enCamino_Sg=1 where idVenta_Vn=@id";
+                string consulta = "update seguimiento set enCamino_Sg=1 where idVenta_Vn_Sg=@id";
                 cn.setearConsulta(consulta);
                 cn.setearParametros("@id", idVenta);
                 int filas=cn.ejecutarAccion();
@@ -69,7 +69,7 @@ namespace database
 
             try
             {
-                string consulta = "update Ventas set entregado_Sg=1 where idVenta_Vn=@id";
+                string consulta = "update seguimiento set entregado_Sg=1 where idVenta_Vn_Sg=@id";
                 cn.setearConsulta(consulta);
                 cn.setearParametros("@id", idVenta);
                 int filas = cn.ejecutarAccion();
@@ -90,7 +90,7 @@ namespace database
             daoDetalleVentas cnDet = new daoDetalleVentas();
             try
             {
-                cn.setearConsulta("SELECT idVenta_Vn as idVenta ,dni_Cl_Vn as dniCliente ,total_Vn as total ,fechaVenta_Vn as fechaVenta,enCamino_Sg,entregado_Sg FROM Ventas where dni_Cl_Vn=@dni");
+                cn.setearConsulta("SELECT V.idVenta_Vn as idVenta ,V.dni_Cl_Vn as dniCliente ,V.total_Vn as total ,V.fechaVenta_Vn as fechaVenta,S.enCamino_Sg,S.entregado_Sg FROM Ventas V LEFT JOIN seguimiento S ON V.idVenta_Vn = S.idVenta_Vn_Sg;");
                 cn.setearParametros("@dni", dni);
                 SqlDataReader lector = cn.ejecutarLectura();
                 while (lector.Read())
